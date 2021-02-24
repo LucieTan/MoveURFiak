@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MoveUrFiak</string>
+    <string name ="label_profil">Profil</string>
+    <string name ="label_meteo">Meteo</string>
+    <string name ="label_alarm">Réveil</string>
+    <string name ="label_soleil">Petit soleil</string>
+    <string name="label_inscription">S'incrire</string>
+    <string name="label_connexion">S'authentifier</string>
+    <string name="douce_phrase">Il est temps de se réveiller :)</string>
+    <string name="label_soon">Encore 5 minutes</string>
+    <string name="label_resoudre">Allons résoudre le puzzle !</string>
+    <string name="reveil_heure">Bouge ton boule</string>
+    <string name="label_validation">Valider</string>
+
+    <!--Page authentification de l'utilisateur-->
+    <string name="title_login">Connectez-vous sur</string>
+    <string name="txt_ps_de_compte">Pas encore de compte ?</string>
+    <string name="txt_inscription">Inscrivez-vous dès maintenant</string>
+
+
+    <!--Page d'inscription-->
+    <string name="title_signin">Inscrivez-vous sur</string>
+    <string name="txt_compte_existant">Vous avez déjà un compte ?</string>
+    <string name="txt_cliquez_ici">Cliquez ici !</string>
+
+
+
+
+    <string name = "label_ajt">Ajout alarme</string>
+</resources>
