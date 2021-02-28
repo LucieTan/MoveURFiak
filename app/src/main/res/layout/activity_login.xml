@@ -55,7 +55,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_connect"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.135"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/mdp"
@@ -72,7 +73,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.107"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/login"
@@ -94,7 +96,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="Pas encore de compte? Inscrivez-vous!"
+        android:text="@string/txt_ps_de_compte"
         android:textColor="@color/dark_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +115,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.173"
-        app:srcCompat="@drawable/ic_sun" />
+        app:srcCompat="@drawable/ic_sun"
+        android:contentDescription="@string/label_soleil" />
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -140,9 +143,9 @@
         android:layout_marginBottom="15dp"
         android:text="@string/mdp_oublie"
         android:textColor="@color/blue_green"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_creation" />;
+        app:layout_constraintTop_toBottomOf="@+id/txt_creation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
