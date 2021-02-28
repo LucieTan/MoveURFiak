@@ -226,7 +226,7 @@ public class MemoryActivity extends AppCompatActivity {
                 tv_p1.setText("P1 :" +playerPoints);
             }else if(turn ==2){
                 cpuPoints++;
-                tv_p2.setText("P2:" + cpuPoints);
+                tv_p2.setText("P2 :" + cpuPoints);
             }
         }else{
             iv_11.setImageResource(R.drawable.ic_moon);
@@ -269,7 +269,7 @@ public class MemoryActivity extends AppCompatActivity {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MemoryActivity.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER\n P1:" + playerPoints + "\nP2"+ cpuPoints)
+                    .setMessage("GAME OVER\nP1: " + playerPoints + "\nP2: "+ cpuPoints)
                     .setCancelable(false)
                     .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
                         @Override

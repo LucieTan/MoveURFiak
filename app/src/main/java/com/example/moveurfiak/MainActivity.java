@@ -25,11 +25,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-  /*  private void jouer(View view){
-        startActivity(new Intent(getApplicationContext(), MemoryActivity.class));
-        finish();
-
-    }*/
 }
