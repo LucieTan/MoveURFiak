@@ -2,6 +2,7 @@ package com.example.moveurfiak;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,13 +18,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*btn_jeu = findViewById(R.id.btn_jeu);
+        Button btn_jeu = findViewById(R.id.btn_jeu);
         btn_jeu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getApplicationContext(), CalculActivity.class));
+                finish();
             }
-        });*/
+        });
 
     }
 }
