@@ -4,18 +4,18 @@
     <string name="label_meteo">Meteo</string>
     <string name="label_alarm">Réveil</string>
     <string name="label_soleil">Petit soleil</string>
-    <string name="label_inscription">S'incrire</string>
-    <string name="label_connexion">S'authentifier</string>
+    <string name="label_inscription">"S'incrire"</string>
+    <string name="label_connexion">"S'authentifier"</string>
     <string name="douce_phrase">Il est temps de se réveiller :)</string>
     <string name="label_soon">Encore 5 minutes</string>
     <string name="label_resoudre">Allons résoudre le puzzle !</string>
     <string name="reveil_heure">Bouge ton boule</string>
     <string name="label_validation">Valider</string>
+    <string name="label_deconnexion">Déconnexion</string>
 
     <!--Page authentification de l'utilisateur-->
     <string name="title_login">Connectez-vous sur</string>
-    <string name="txt_ps_de_compte">Pas encore de compte ?</string>
-    <string name="txt_inscription">Inscrivez-vous dès maintenant</string>
+    <string name="txt_ps_de_compte">Pas encore de compte ? Inscrivez-vous dès maintenant</string>
 
 
     <!--Page d'inscription-->
@@ -27,4 +27,11 @@
     <string name="label_ajt">Ajout alarme</string>
     <string name="label_pieces">piece</string>
     <string name="label_puzzle">Puzzle !!</string>
+
+
+    <string name ="label_mail">Email</string>
+    <string name ="label_mdp">Mot de passe</string>
+    <string name ="label_nickname">Pseudo</string>
+
+    <string name="mdp_oublie">Mot de passe oublié ?</string>
 </resources>
