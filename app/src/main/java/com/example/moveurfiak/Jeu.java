@@ -1,5 +1,6 @@
 package com.example.moveurfiak;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Jeu {
@@ -66,6 +67,7 @@ public class Jeu {
         totalDeCalculs = 0;
         score = 0;
         currentCalcul = new CalculActivity(10);
+        calculs = new ArrayList<CalculActivity>();
     }
 
     public void makeNewCalcul() {

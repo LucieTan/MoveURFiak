@@ -12,6 +12,7 @@ import java.util.Random;
 
 public class CalculActivity extends AppCompatActivity {
 
+    public CalculActivity() {}
 
         private int premierNB;
         private int secondNB;
@@ -122,6 +123,8 @@ public class CalculActivity extends AppCompatActivity {
     TextView txt_timer, txt_calcul, txt_score, txt_msg_bas;
     ProgressBar bar_timer;
 
+    Jeu g = new Jeu();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,18 +153,44 @@ public class CalculActivity extends AppCompatActivity {
                 Button start_button = (Button) v;
 
                 start_button.setVisibility(View.INVISIBLE);
-                startGame();
+                nextTurn();
             }
         };
+        View.OnClickListener answerButtonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button buttonClicked = (Button) v;
+
+                int reponseSelect = Integer.parseInt(buttonClicked.getText().toString());
+            }
+        };
+
         btn_start.setOnClickListener(startButtonClickListener);
 
-    }
-    private void startGame(){
-        // creer nv calcul
-        // set les reponses sur les boutons
-        // activer les btn de reponse
-        // démarrer le timer
+        btn_rep0.setOnClickListener(answerButtonClickListener);
+        btn_rep1.setOnClickListener(answerButtonClickListener);
+        btn_rep2.setOnClickListener(answerButtonClickListener);
+        btn_rep3.setOnClickListener(answerButtonClickListener);
 
+
+    }
+    private void nextTurn(){
+
+        g.makeNewCalcul();
+        int [] reponse = g.getCurrentCalcul().getReponseArray();
+
+        btn_rep0.setText(Integer.toString(reponse[0]));
+        btn_rep1.setText(Integer.toString(reponse[1]));
+        btn_rep2.setText(Integer.toString(reponse[2]));
+        btn_rep3.setText(Integer.toString(reponse[3]));
+
+        btn_rep0.setEnabled(true);
+        btn_rep1.setEnabled(true);
+        btn_rep2.setEnabled(true);
+        btn_rep3.setEnabled(true);
+
+
+        txt_calcul.setText(g.getCurrentCalcul().getQuestionPhrase());
 
     }
 
