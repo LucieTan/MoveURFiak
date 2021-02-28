@@ -26,4 +26,7 @@
 
     <string name="label_ajt">Ajout alarme</string>
     <string name="textview">TextView</string>
+    <string name="txt_ville">Veuillez saisir le nom d une ville</string>
+    <string name="txt_temperature">Regarde il fé cb</string>
+
 </resources>
