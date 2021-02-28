@@ -3,6 +3,7 @@ package com.example.moveurfiak;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -11,7 +12,7 @@ import java.util.Random;
 
 public class CalculActivity extends AppCompatActivity {
 
-    private class Calcul {
+
         private int premierNB;
         private int secondNB;
         private int reponse;
@@ -26,13 +27,14 @@ public class CalculActivity extends AppCompatActivity {
 
         // Génération d'un calcul random
 
-        public Calcul(int chiffreMax) {
+        public CalculActivity(int chiffreMax) {
             this.chiffreMax = chiffreMax;
             Random randomNumberMaker = new Random();
 
             this.premierNB = randomNumberMaker.nextInt(chiffreMax);
             this.secondNB = randomNumberMaker.nextInt(chiffreMax);
             this.reponse = this.premierNB + this.secondNB;
+            this.questionPhrase = premierNB + " + " + secondNB + " = ";
 
             this.reponsePosition = randomNumberMaker.nextInt(4);
             this.reponseArray = new int[] {0,1,2,3};
@@ -114,7 +116,7 @@ public class CalculActivity extends AppCompatActivity {
         public void setQuestionPhrase(String questionPhrase) {
             this.questionPhrase = questionPhrase;
         }
-    }
+
 
     Button btn_start, btn_rep0, btn_rep1, btn_rep2, btn_rep3;
     TextView txt_timer, txt_calcul, txt_score, txt_msg_bas;
@@ -140,6 +142,27 @@ public class CalculActivity extends AppCompatActivity {
         txt_calcul.setText("");
         txt_msg_bas.setText("Press Go");
         txt_score.setText("0 points");
+        bar_timer.setProgress(0);
+
+        View.OnClickListener startButtonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button start_button = (Button) v;
+
+                start_button.setVisibility(View.INVISIBLE);
+                startGame();
+            }
+        };
+        btn_start.setOnClickListener(startButtonClickListener);
 
     }
+    private void startGame(){
+        // creer nv calcul
+        // set les reponses sur les boutons
+        // activer les btn de reponse
+        // démarrer le timer
+
+
+    }
+
 }
