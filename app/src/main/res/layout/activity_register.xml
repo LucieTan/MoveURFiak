@@ -53,7 +53,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_inscription"
-        app:layout_constraintVertical_bias="0.070" />
+        app:layout_constraintVertical_bias="0.070"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/pseudo"
@@ -72,7 +73,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Email"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.045"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/mdp"
@@ -83,7 +85,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
         android:ems="10"
-        android:hint="Mot de passe"
+        android:hint="@string/label_mdp"
         android:inputType="textPassword"
         android:textColor="@color/blue_green"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +93,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pseudo"
-        app:layout_constraintVertical_bias="0.050" />
+        app:layout_constraintVertical_bias="0.050"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/registerBtn"
@@ -101,7 +104,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
-        android:text="Valider"
+        android:text="@string/title_signin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +115,7 @@
         android:id="@+id/txt_creation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vous avez déjà un compte ? Connectez-vous ici !"
+        android:text="@string/txt_compte_existant"
         android:textColor="@color/blue_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +134,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.012"
-        app:srcCompat="@drawable/ic_sun" />
+        app:srcCompat="@drawable/ic_sun"
+        android:contentDescription="@string/label_soleil"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -20,8 +20,7 @@
 
     <!--Page d'inscription-->
     <string name="title_signin">Inscrivez-vous sur</string>
-    <string name="txt_compte_existant">Vous avez déjà un compte ?</string>
-    <string name="txt_cliquez_ici">Cliquez ici !</string>
+    <string name="txt_compte_existant">Vous avez déjà un compte ? Cliquez ici !</string>
 
 
     <string name="label_ajt">Ajout alarme</string>
