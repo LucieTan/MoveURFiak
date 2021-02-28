@@ -22,7 +22,7 @@ public class CalculActivity extends AppCompatActivity {
         // la position de réponse du tableau précdédent aka 0 1 2 ou 3
         private int reponsePosition;
 
-        //aled
+        //aled..3.
         private int chiffreMax;
 
         private String questionPhrase;
