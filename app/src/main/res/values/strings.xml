@@ -4,8 +4,8 @@
     <string name="label_meteo">Meteo</string>
     <string name="label_alarm">Réveil</string>
     <string name="label_soleil">Petit soleil</string>
-    <string name="label_inscription">S'incrire</string>
-    <string name="label_connexion">S'authentifier</string>
+    <string name="label_inscription">"S'incrire"</string>
+    <string name="label_connexion">"S'authentifier"</string>
     <string name="douce_phrase">Il est temps de se réveiller :)</string>
     <string name="label_soon">Encore 5 minutes</string>
     <string name="label_resoudre">Allons résoudre le puzzle !</string>
