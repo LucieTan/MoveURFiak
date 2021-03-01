@@ -174,7 +174,7 @@ public class MemoryActivity extends AppCompatActivity {
             iv_23.setEnabled(false);
             iv_24.setEnabled(false);
 
-            Handler handler =new Handler();
+            Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
