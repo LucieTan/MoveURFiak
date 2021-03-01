@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Game {
 
-    private List<Question> questions = new ArrayList<>();
+    private List<Question> questions;
     private int numberCorrect;
     private int numberIcorrect;
     private int totalQuestions;
@@ -19,6 +19,7 @@ public class Game {
         totalQuestions = 0;
         score = 0;
         currentQuestion = new Question(10);
+        questions = new ArrayList<Question>();
 
     }
 
