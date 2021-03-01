@@ -60,8 +60,5 @@ public class MeteoActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 }
