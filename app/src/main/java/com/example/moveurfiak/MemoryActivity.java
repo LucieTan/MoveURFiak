@@ -276,6 +276,8 @@ public class MemoryActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Intent intent = new Intent(getApplicationContext(), MemoryActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
                     }).setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
                 @Override
