@@ -59,6 +59,7 @@ public class MemoryActivity extends AppCompatActivity {
 
         frontOfCardsRessources();
 
+        //permet de mélanger les cartes à chaque nouvelle partie
         Collections.shuffle(Arrays.asList(cardArray));
 
         tv_p2.setTextColor(Color.GRAY);
@@ -258,10 +259,10 @@ public class MemoryActivity extends AppCompatActivity {
         iv_23.setEnabled(true);
         iv_24.setEnabled(true);
 
-        checkEnd();
+        FinDePartie();
     }
 
-    private void checkEnd(){
+    private void FinDePartie(){
         if(iv_11.getVisibility() == View.INVISIBLE &&iv_12.getVisibility() == View.INVISIBLE &&
                 iv_13.getVisibility() == View.INVISIBLE &&iv_14.getVisibility() == View.INVISIBLE &&
                 iv_21.getVisibility() == View.INVISIBLE &&iv_22.getVisibility() == View.INVISIBLE &&
@@ -282,14 +283,12 @@ public class MemoryActivity extends AppCompatActivity {
                     finish();
                 }
             });
-
             AlertDialog alertDialog =alertDialogBuilder.create();
             alertDialog.show();
-
-
         }
     }
 
+    //Méthode qui permet d'assigner une image à un numéro
     private void frontOfCardsRessources(){
         image101 = R.drawable.ic_image101;
         image102 = R.drawable.ic_image102;
