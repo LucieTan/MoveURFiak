@@ -43,6 +43,7 @@ public class Login extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar1);
 
+        //Bouton qui permet de valider les informations entrées par l'utilisateur
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +71,7 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this, "Vous êtes bien connecté", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), Accueil.class));
                         }else{
                             Toast.makeText(Login.this, "Une erreur est survenue"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -79,6 +80,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //Lien cliquable lorsque nous n'avons pas de compte
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +88,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //Lien qui permet de récupérer son compte lorsque nous oublions notre mdp
         forgotTextLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
