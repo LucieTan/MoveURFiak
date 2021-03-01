@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
                 Button start_button = (Button) v;
 
                 start_button.setVisibility(View.INVISIBLE);
+                btn_answer0.setVisibility(View.VISIBLE);
+                btn_answer1.setVisibility(View.VISIBLE);
+                btn_answer2.setVisibility(View.VISIBLE);
+                btn_answer3.setVisibility(View.VISIBLE);
                 nextTurn();
                 timer.start();
             }
