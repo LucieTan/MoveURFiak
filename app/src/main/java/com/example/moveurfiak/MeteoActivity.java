@@ -21,7 +21,7 @@ public class MeteoActivity extends AppCompatActivity {
     String url="api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
     String apikey="6b1621f194da05fd51c8b57d1847c7c6";
 
-    Button btn_connass;
+  //  Button btn_connass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

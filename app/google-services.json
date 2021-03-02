@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "942440564981",
+    "project_id": "moveurfiak-28847",
+    "storage_bucket": "moveurfiak-28847.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942440564981:android:f94a3ef435638c58d35dbc",
+        "android_client_info": {
+          "package_name": "com.example.moveurfiak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942440564981-32khn6htqb618ml6ck96e7ogct9g25lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAra_BXxj3Ad04UKqGbF6gnMODbbmknSPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942440564981-32khn6htqb618ml6ck96e7ogct9g25lh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
