@@ -26,6 +26,7 @@
     <string name="label_ajt">Ajout alarme</string>
     <string name="label_pieces">piece</string>
     <string name="label_puzzle">Puzzle !!</string>
+    <string name="label_Memory">Memory</string>
     <string name="img_nuage">Petit nuage</string>
 
 
@@ -34,4 +35,6 @@
     <string name="label_nickname">Pseudo</string>
 
     <string name="mdp_oublie">Mot de passe oublié ?</string>
+    <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
+    <string name ="label_calcul">Calcul</string>
 </resources>
