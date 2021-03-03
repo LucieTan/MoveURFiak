@@ -25,13 +25,13 @@ public class Memory extends AppCompatActivity {
 
     Integer[] cardArray ={101, 102, 103, 104, 201,202,203, 204};
 
-    int image101,image102,image103,image104, image201,image202,image203,image204;
+    int image101, image102, image103, image104, image201, image202, image203, image204;
 
     int firstCard, secondCard;
     int clickedFirst, clickedSecond;
     int cardNumber = 1;
     int turn = 1;
-    int playerPoints=0 , cpuPoints = 0;
+    int playerPoints=0, cpuPoints = 0;
 
 
 
