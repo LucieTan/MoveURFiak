@@ -8,20 +8,18 @@ public class Jeu {
 
     private List<Question> questions = new ArrayList<>();
     private int numberCorrect;
-    private int numberIcorrect;
+    private int numberIncorrect;
     private int totalQuestions;
     private int score;
     private Question currentQuestion;
 
     public Jeu() {
         numberCorrect = 0;
-        numberIcorrect = 0;
+        numberIncorrect = 0;
         totalQuestions = 0;
         score = 0;
         currentQuestion = new Question(10);
-
     }
-
     public void makeNewQuestion() {
         currentQuestion = new Question(totalQuestions * 2 + 5);
         totalQuestions++;
@@ -34,59 +32,25 @@ public class Jeu {
             numberCorrect++;
             isCorrect = true;
         } else {
-            numberIcorrect++;
+            numberIncorrect++;
             isCorrect=false;
         }
-        score = numberCorrect * 10 - numberIcorrect * 30;
+        score = numberCorrect * 10 - numberIncorrect * 30;
         return isCorrect;
     }
-
-
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
-    }
-
     public int getNumberCorrect() {
         return numberCorrect;
-    }
-
-    public void setNumberCorrect(int numberCorrect) {
-        this.numberCorrect = numberCorrect;
-    }
-
-    public int getNumberIcorrect() {
-        return numberIcorrect;
-    }
-
-    public void setNumberIcorrect(int numberIcorrect) {
-        this.numberIcorrect = numberIcorrect;
     }
 
     public int getTotalQuestions() {
         return totalQuestions;
     }
 
-    public void setTotalQuestions(int totalQuestions) {
-        this.totalQuestions = totalQuestions;
-    }
-
     public int getScore() {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public Question getCurrentQuestion() {
         return currentQuestion;
-    }
-
-    public void setCurrentQuestion(Question currentQuestion) {
-        this.currentQuestion = currentQuestion;
     }
 }

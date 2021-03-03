@@ -7,13 +7,9 @@ public class Question {
     private int firstNumber;
     private int secondNumber;
     private int answer;
-
     private int [] answerArray;
-
     private int answerPosition;
-
     private int upperLimit;
-
     private String questionPhrase;
 
     public Question(int upperLimit) {
@@ -37,7 +33,6 @@ public class Question {
 
         answerArray[answerPosition] = answer;
     }
-
     private int[] shuffleArray(int[] array) {
         int index, temp;
         Random randomNumberGenerator = new Random();
@@ -51,62 +46,13 @@ public class Question {
         return array;
     }
 
-
-
-
-    public int getFirstNumber() {
-        return firstNumber;
-    }
-
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
-    }
-
-    public int getSecondNumber() {
-        return secondNumber;
-    }
-
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
-    }
-
     public int getAnswer() {
         return answer;
     }
-
-    public void setAnswer(int answer) {
-        this.answer = answer;
-    }
-
     public int[] getAnswerArray() {
         return answerArray;
     }
-
-    public void setAnswerArray(int[] answerArray) {
-        this.answerArray = answerArray;
-    }
-
-    public int getAnswerPosition() {
-        return answerPosition;
-    }
-
-    public void setAnswerPosition(int answerPosition) {
-        this.answerPosition = answerPosition;
-    }
-
-    public int getUpperLimit() {
-        return upperLimit;
-    }
-
-    public void setUpperLimit(int upperLimit) {
-        this.upperLimit = upperLimit;
-    }
-
     public String getQuestionPhrase() {
         return questionPhrase;
-    }
-
-    public void setQuestionPhrase(String questionPhrase) {
-        this.questionPhrase = questionPhrase;
     }
 }
