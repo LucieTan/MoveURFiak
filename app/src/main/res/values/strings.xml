@@ -12,29 +12,32 @@
     <string name="reveil_heure">Bouge ton boule</string>
     <string name="label_validation">Valider</string>
     <string name="label_deconnexion">Déconnexion</string>
+    <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
 
     <!--Page authentification de l'utilisateur-->
     <string name="title_login">Connectez-vous sur</string>
     <string name="txt_ps_de_compte">Pas encore de compte ? Inscrivez-vous dès maintenant</string>
-
+    <string name="label_mail">Email</string>
+    <string name="label_mdp">Mot de passe</string>
+    <string name="label_nickname">Pseudo</string>
 
     <!--Page d'inscription-->
     <string name="title_signin">Inscrivez-vous sur</string>
     <string name="txt_compte_existant">Vous avez déjà un compte ? Cliquez ici !</string>
 
-
+    <!--Partie jeu-->
     <string name="label_ajt">Ajout alarme</string>
-    <string name="label_pieces">piece</string>
     <string name="label_puzzle">Puzzle !!</string>
     <string name="label_Memory">Memory</string>
+    <string name="label_pieces">piece</string>
+    <string name="label_calcul">Calcul</string>
+    <string name="label_score">Score :</string>
+
+
     <string name="img_nuage">Petit nuage</string>
 
 
-    <string name="label_mail">Email</string>
-    <string name="label_mdp">Mot de passe</string>
-    <string name="label_nickname">Pseudo</string>
-
     <string name="mdp_oublie">Mot de passe oublié ?</string>
-    <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
-    <string name ="label_calcul">Calcul</string>
+
+
 </resources>

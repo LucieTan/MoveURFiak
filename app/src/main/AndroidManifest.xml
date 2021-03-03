@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/logo_muf"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoveUrFiak">
-        <activity android:name=".Accueil"></activity>
+        <activity android:name="memory.Memory"/>
+        <activity android:name=".Accueil" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".SplashScreenActivity">
