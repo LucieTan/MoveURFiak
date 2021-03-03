@@ -27,14 +27,10 @@ public class Memory extends AppCompatActivity {
 
     int image101, image102, image103, image104, image201, image202, image203, image204;
 
-    int firstCard, secondCard;
-    int clickedFirst, clickedSecond;
+    int firstCard, secondCard,clickedFirst, clickedSecond;
     int cardNumber = 1;
     int turn = 1;
-    int playerPoints=0, cpuPoints = 0;
-
-
-
+    int playerPoints = 0,cpuPoints = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +39,6 @@ public class Memory extends AppCompatActivity {
 
         tv_p1 = (TextView) findViewById(R.id.tv_p1);
         tv_p2 = (TextView) findViewById(R.id.tv_p2);
-
         iv_11 = (ImageView) findViewById(R.id.iv_11);
         iv_12 = (ImageView) findViewById(R.id.iv_12);
         iv_13 = (ImageView) findViewById(R.id.iv_13);
@@ -63,11 +58,8 @@ public class Memory extends AppCompatActivity {
         iv_24.setTag("7");
 
         frontOfCardsRessources();
-
         Collections.shuffle(Arrays.asList(cardArray));
-
         tv_p2.setTextColor(Color.GRAY);
-
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -262,7 +254,6 @@ public class Memory extends AppCompatActivity {
         iv_22.setEnabled(true);
         iv_23.setEnabled(true);
         iv_24.setEnabled(true);
-
         checkEnd();
     }
 
@@ -289,11 +280,8 @@ public class Memory extends AppCompatActivity {
                     finish();
                 }
             });
-
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
-
-
         }
     }
 

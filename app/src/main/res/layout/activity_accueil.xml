@@ -53,12 +53,39 @@
         android:id="@+id/calcul"
         android:layout_width="235dp"
         android:layout_height="45dp"
-        android:text="@string/label_calcul"
+        android:text= "@string/label_calcul"
+        android:onClick="calcul"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.40" />
+
+    <Button
+        android:id="@+id/meteo"
+        android:layout_width="235dp"
+        android:layout_height="45dp"
+        android:text="@string/label_meteo"
+        android:onClick="meteo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcul"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <Button
+        android:id="@+id/clicker"
+        android:layout_width="235dp"
+        android:layout_height="45dp"
+        android:onClick="clicker"
+        android:text="@string/label_clicker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meteo"
+        app:layout_constraintVertical_bias="0.115" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

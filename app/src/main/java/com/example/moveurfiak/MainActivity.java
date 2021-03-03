@@ -8,6 +8,8 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import Meteo.MeteoActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

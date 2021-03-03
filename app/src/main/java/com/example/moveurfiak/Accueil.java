@@ -9,6 +9,9 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import Meteo.MeteoActivity;
+import clicker.MeteoClickerActivity;
+import jeuCalcul.CalculActivity;
 import memory.Memory;
 
 public class Accueil extends AppCompatActivity {
@@ -19,24 +22,21 @@ public class Accueil extends AppCompatActivity {
         setContentView(R.layout.activity_accueil);
     }
 
-    public void deconnexion(View view){
-        FirebaseAuth.getInstance().signOut(); // Déconnexion de l'utilisateur
-        startActivity(new Intent(getApplicationContext(), Login.class));
-        finish();
-    }
-
-    public void inscription(View view){
-        startActivity(new Intent(getApplicationContext(), Register.class));
-        finish();
-    }
-
-    public void connexion(View view){
-        startActivity(new Intent(getApplicationContext(), Login.class));
-        finish();
-    }
-
     public void memory(View view){
         startActivity(new Intent(getApplicationContext(), Memory.class));
+        finish();
+    }
+    public void calcul(View view){
+        startActivity(new Intent(getApplicationContext(), CalculActivity.class));
+        finish();
+    }
+    public void meteo(View view){
+        startActivity(new Intent(getApplicationContext(), MeteoActivity.class));
+        finish();
+    }
+
+    public void clicker(View view){
+        startActivity(new Intent(getApplicationContext(), MeteoClickerActivity.class));
         finish();
     }
 }

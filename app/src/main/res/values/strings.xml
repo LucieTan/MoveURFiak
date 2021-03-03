@@ -32,12 +32,19 @@
     <string name="label_pieces">piece</string>
     <string name="label_calcul">Calcul</string>
     <string name="label_score">Score :</string>
+    <string name="label_jouer">Jouer</string>
+    <string name="label_clicker">Meteo Clicker</string>
+    <string name ="img">Image</string>
 
 
     <string name="img_nuage">Petit nuage</string>
 
 
     <string name="mdp_oublie">Mot de passe oublié ?</string>
+
+    <string name="txt_appBouton">Appuyez sur le bouton pour connaitre la température !</string>
+    <string name="tv_ville"> Inserez votre ville ici</string>
+    <string name ="meteoclicker">Cliquez sur l image pour la faire disparaître !</string>
 
 
 </resources>
