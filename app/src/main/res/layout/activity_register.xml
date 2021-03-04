@@ -7,6 +7,7 @@
     android:background="@color/sable"
     tools:context=".Register">
 
+
     <TextView
         android:id="@+id/text_inscription"
         android:layout_width="wrap_content"

@@ -13,37 +13,38 @@
         android:roundIcon="@drawable/logo_muf"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoveUrFiak">
-        <activity android:name="memory.Memory"
-            android:parentActivityName=".Accueil"
-            />
-        <activity android:name="reveil.AlarmActivity"
-            android:parentActivityName=".Accueil"
-            />
-        <activity android:name="clicker.MeteoClickerActivity"
-            android:parentActivityName=".Accueil"
-            />
-        <activity android:name="Meteo.MeteoActivity"
-            android:parentActivityName=".Accueil"
-            />
-        <activity android:name="jeuCalcul.CalculActivity"
-            android:parentActivityName=".Accueil"
-            />
+        <activity
+            android:name="jeuCalcul.CalculActivity"
+            android:parentActivityName=".Accueil" />
+        <activity
+            android:name="reveil.AlarmActivity"
+            android:parentActivityName=".Accueil" />
+        <activity
+            android:name="memory.Memory"
+            android:parentActivityName=".Accueil" />
+        <activity
+            android:name="Meteo.MeteoActivity"
+            android:parentActivityName=".Accueil" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:parentActivityName=".Accueil" />
         <activity android:name=".Accueil" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name="clicker.MeteoClickerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
+
         <service
             android:name="reveil.AlarmService"
             android:enabled="true" />
+
         <receiver android:name="reveil.AlarmReceiver" />
-
-
     </application>
 
 </manifest>

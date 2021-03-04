@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ import java.util.Collections;
 
 public class Memory extends AppCompatActivity {
 
-    TextView tv_p1, tv_p2;
+    TextView tv_p1;
 
     ImageView iv_11, iv_12, iv_13, iv_14, iv_21, iv_22, iv_23, iv_24;
 
@@ -31,6 +32,9 @@ public class Memory extends AppCompatActivity {
     int cardNumber = 1;
     int turn = 1;
     int playerPoints = 0,cpuPoints = 0;
+
+    Chronometer chrono;
+    String timer ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +65,14 @@ public class Memory extends AppCompatActivity {
 
         frontOfCardsRessources();
         Collections.shuffle(Arrays.asList(cardArray));
-       // tv_p2.setTextColor(Color.GRAY);
+        chrono = (Chronometer) findViewById(R.id.chrono_memo);
+        chrono.start();
 
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int theCard = Integer.parseInt((String) v.getTag());
                 doStuff(iv_11, theCard);
-
             }
         });
         iv_12.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +156,7 @@ public class Memory extends AppCompatActivity {
             if(firstCard > 200){
                 firstCard=firstCard-100;
             }
-            cardNumber =2;
+            cardNumber = 2;
             clickedFirst=card;
             iv.setEnabled(false);
 
@@ -173,7 +177,7 @@ public class Memory extends AppCompatActivity {
             iv_23.setEnabled(false);
             iv_24.setEnabled(false);
 
-            Handler handler =new Handler();
+            Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -220,14 +224,9 @@ public class Memory extends AppCompatActivity {
             }else if (clickedSecond == 7){
                 iv_24.setVisibility(View.INVISIBLE);
             }
-
-           if(turn ==1){
                 playerPoints++;
                 tv_p1.setText("P1 :" + playerPoints);
-            }/*else if(turn ==2){
-                cpuPoints++;
-                tv_p2.setText("P2:" + cpuPoints);
-            }*/
+
         }else{
             iv_11.setImageResource(R.drawable.ic_moon);
             iv_12.setImageResource(R.drawable.ic_moon);
@@ -238,8 +237,7 @@ public class Memory extends AppCompatActivity {
             iv_23.setImageResource(R.drawable.ic_moon);
             iv_24.setImageResource(R.drawable.ic_moon);
 
-
-            tv_p1.setTextColor(Color.BLUE);
+            tv_p1.setTextColor(Color.WHITE);
         }
 
         iv_11.setEnabled(true);
@@ -258,10 +256,11 @@ public class Memory extends AppCompatActivity {
                 iv_13.getVisibility() == View.INVISIBLE &&iv_14.getVisibility() == View.INVISIBLE &&
                 iv_21.getVisibility() == View.INVISIBLE &&iv_22.getVisibility() == View.INVISIBLE &&
                 iv_23.getVisibility() == View.INVISIBLE &&iv_24.getVisibility() == View.INVISIBLE ){
+            chrono.stop();
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
             alertDialogBuilder
-                    .setMessage("GAME OVER\n P1:" + playerPoints + "\nP2: "+ cpuPoints)
+                    .setMessage("Fin de jeu\n Vous avez pris : " + chrono.getText() + " sec")
                     .setCancelable(false)
                     .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
                         @Override

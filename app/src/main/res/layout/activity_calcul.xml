@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
-    android:background="@color/sable">
+    android:background="@color/dark_blue">
+
+    <ImageView
+        android:id="@+id/img_star3"
+        android:layout_width="49dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        app:srcCompat="@drawable/ic_star" />
+
+    <ImageView
+        android:id="@+id/img_star2"
+        android:layout_width="49dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginLeft="256dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058"
+        app:srcCompat="@drawable/ic_star" />
+
+    <ImageView
+        android:id="@+id/img_star4"
+        android:layout_width="49dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginLeft="352dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.843"
+        app:srcCompat="@drawable/ic_star" />
 
     <Button
         android:id="@+id/btn_start"
@@ -16,7 +53,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/space_blue"/>
 
     <ProgressBar
         android:id="@+id/prog_timer"
@@ -30,13 +68,15 @@
         android:progress="45"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:progressTint="@color/yellow"/>
 
     <TextView
         android:id="@+id/tv_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_score"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prog_timer" />
@@ -48,6 +88,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/label_score"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prog_timer" />
@@ -61,14 +102,39 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/label_score"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_score"
         app:layout_constraintStart_toEndOf="@+id/tv_timer"
         app:layout_constraintTop_toBottomOf="@+id/prog_timer" />
 
+    <ImageView
+        android:id="@+id/img_star1"
+        android:layout_width="49dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538"
+        app:srcCompat="@drawable/ic_star" />
+
+    <ImageView
+        android:id="@+id/img_fondFlou"
+        android:layout_width="328dp"
+        android:layout_height="524dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/fond_flou" />
+
     <TableLayout
-        android:layout_width="0dp"
-        android:layout_height="400dp"
+        android:id="@+id/tableLayout"
+        android:layout_width="304dp"
+        android:layout_height="241dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -77,8 +143,10 @@
         android:layout_marginBottom="130dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_bottommessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_questions">
+        app:layout_constraintTop_toBottomOf="@id/tv_questions"
+        app:layout_constraintVertical_bias="0.379">
 
 
         <TableRow
@@ -88,17 +156,20 @@
             <Button
                 android:id="@+id/btn_rep0"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="110dp"
                 android:layout_weight="1"
+                android:layout_marginRight="10dp"
                 android:height="200dp"
+                android:backgroundTint="@color/space_blue"
                 android:text="@string/label_calcul" />
 
             <Button
                 android:id="@+id/btn_rep1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="110dp"
                 android:layout_weight="1"
                 android:height="200dp"
+                android:backgroundTint="@color/space_blue"
                 android:text="@string/label_calcul" />
         </TableRow>
 
@@ -109,18 +180,22 @@
             <Button
                 android:id="@+id/btn_rep2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="110dp"
                 android:layout_weight="1"
+                android:layout_marginRight="10dp"
                 android:height="200dp"
+                android:backgroundTint="@color/space_blue"
                 android:text="@string/label_calcul" />
 
             <Button
                 android:id="@+id/btn_rep3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="110dp"
                 android:layout_weight="1"
                 android:height="200dp"
+                android:backgroundTint="@color/space_blue"
                 android:text="@string/label_calcul" />
+
         </TableRow>
 
 
@@ -135,10 +210,22 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/label_jouer"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_moony"
+        android:layout_width="195dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="215dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tableLayout"
+        app:srcCompat="@drawable/ic_moony" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

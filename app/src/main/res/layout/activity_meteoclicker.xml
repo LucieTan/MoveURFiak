@@ -5,7 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="MissingDefaultResource"
-    android:background="@color/sable">
+    android:background="@color/dark_blue">
+
+    <ImageView
+        android:id="@+id/img_fondFlou"
+        android:layout_width="359dp"
+        android:layout_height="541dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735"
+        app:srcCompat="@drawable/fond_flou" />
 
     <ImageView
         android:id="@+id/tornado"
@@ -100,9 +113,11 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="60dp"
         android:text="@string/meteoclicker"
-        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/hotsun"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,6 +129,7 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="10dp"
         android:text="@string/label_score"
+        android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textgamerules" />
