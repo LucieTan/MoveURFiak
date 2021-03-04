@@ -26,12 +26,12 @@
             android:name="Meteo.MeteoActivity"
             android:parentActivityName=".Accueil" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="clicker.MeteoClickerActivity"
             android:parentActivityName=".Accueil" />
         <activity android:name=".Accueil" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name="clicker.MeteoClickerActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
