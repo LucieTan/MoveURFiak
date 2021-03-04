@@ -34,7 +34,7 @@
     <string name="label_score">Score :</string>
     <string name="label_jouer">Jouer</string>
     <string name="label_clicker">Meteo Clicker</string>
-    <string name ="img">Image</string>
+    <string name="img">Image</string>
 
 
     <string name="img_nuage">Petit nuage</string>
@@ -44,7 +44,7 @@
 
     <string name="txt_appBouton">Appuyez sur le bouton pour connaitre la température !</string>
     <string name="tv_ville"> Inserez votre ville ici</string>
-    <string name ="meteoclicker">Cliquez sur l image pour la faire disparaître !</string>
+    <string name="meteoclicker">Cliquez sur l image pour la faire disparaître !</string>
 
 
 </resources>

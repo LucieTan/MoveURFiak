@@ -13,6 +13,7 @@ import Meteo.MeteoActivity;
 import clicker.MeteoClickerActivity;
 import jeuCalcul.CalculActivity;
 import memory.Memory;
+import reveil.AlarmActivity;
 
 public class Accueil extends AppCompatActivity {
 
@@ -37,6 +38,11 @@ public class Accueil extends AppCompatActivity {
 
     public void clicker(View view){
         startActivity(new Intent(getApplicationContext(), MeteoClickerActivity.class));
+        finish();
+    }
+
+    public void reveil(View view){
+        startActivity(new Intent(getApplicationContext(), AlarmActivity.class));
         finish();
     }
 }
