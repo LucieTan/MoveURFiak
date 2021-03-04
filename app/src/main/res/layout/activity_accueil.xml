@@ -8,20 +8,6 @@
     tools:context=".Accueil">
 
 
-    <Button
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/ic_back"
-        app:backgroundTint="@color/brown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
-
     <TextView
         android:id="@+id/text_connect"
         android:layout_width="wrap_content"

@@ -22,6 +22,8 @@ public class MeteoClickerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meteoclicker);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         textscore = findViewById(R.id.textscore);
         tornado = findViewById(R.id.tornado);
         hotsun = findViewById(R.id.hotsun);

@@ -12,6 +12,10 @@ public class Question {
     private int upperLimit;
     private String questionPhrase;
 
+    /*
+
+     */
+
     public Question(int upperLimit) {
         this.upperLimit = upperLimit;
         Random randomNumberMaker = new Random();

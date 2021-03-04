@@ -37,8 +37,10 @@ public class Memory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tv_p1 = (TextView) findViewById(R.id.tv_p1);
-        tv_p2 = (TextView) findViewById(R.id.tv_p2);
+        //tv_p2 = (TextView) findViewById(R.id.tv_p2);
         iv_11 = (ImageView) findViewById(R.id.iv_11);
         iv_12 = (ImageView) findViewById(R.id.iv_12);
         iv_13 = (ImageView) findViewById(R.id.iv_13);
@@ -59,7 +61,8 @@ public class Memory extends AppCompatActivity {
 
         frontOfCardsRessources();
         Collections.shuffle(Arrays.asList(cardArray));
-        tv_p2.setTextColor(Color.GRAY);
+       // tv_p2.setTextColor(Color.GRAY);
+
         iv_11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,7 +149,7 @@ public class Memory extends AppCompatActivity {
 
         if(cardNumber == 1){
             firstCard =cardArray[card];
-            if(firstCard>200){
+            if(firstCard > 200){
                 firstCard=firstCard-100;
             }
             cardNumber =2;
@@ -218,13 +221,13 @@ public class Memory extends AppCompatActivity {
                 iv_24.setVisibility(View.INVISIBLE);
             }
 
-            if(turn ==1){
+           if(turn ==1){
                 playerPoints++;
-                tv_p1.setText("P1 :" +playerPoints);
-            }else if(turn ==2){
+                tv_p1.setText("P1 :" + playerPoints);
+            }/*else if(turn ==2){
                 cpuPoints++;
                 tv_p2.setText("P2:" + cpuPoints);
-            }
+            }*/
         }else{
             iv_11.setImageResource(R.drawable.ic_moon);
             iv_12.setImageResource(R.drawable.ic_moon);
@@ -235,15 +238,8 @@ public class Memory extends AppCompatActivity {
             iv_23.setImageResource(R.drawable.ic_moon);
             iv_24.setImageResource(R.drawable.ic_moon);
 
-            if (turn == 1) {
-                turn =2;
-                tv_p1.setTextColor(Color.GRAY);
-                tv_p2.setTextColor(Color.GREEN);
-            }else if (turn ==2){
-                turn =1;
-                tv_p1.setTextColor(Color.BLUE);
-                tv_p2.setTextColor(Color.GRAY);
-            }
+
+            tv_p1.setTextColor(Color.BLUE);
         }
 
         iv_11.setEnabled(true);
@@ -254,7 +250,7 @@ public class Memory extends AppCompatActivity {
         iv_22.setEnabled(true);
         iv_23.setEnabled(true);
         iv_24.setEnabled(true);
-        checkEnd();
+        checkEnd(); // vérifie si le jeu est fini
     }
 
     private void checkEnd(){
@@ -295,4 +291,5 @@ public class Memory extends AppCompatActivity {
         image203 = R.drawable.ic_image203;
         image204 = R.drawable.ic_image204;
     }
+
 }

@@ -2,6 +2,7 @@ package jeuCalcul;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -30,11 +31,7 @@ public class CalculActivity extends AppCompatActivity {
         }
         @Override
         public void onFinish() {
-            btn_rep0.setEnabled(false);
-            btn_rep1.setEnabled(false);
-            btn_rep2.setEnabled(false);
-            btn_rep3.setEnabled(false);
-            tv_bottommessage.setText("Le jeu est terminé : " + g.getNumberCorrect() + "/" + (g.getTotalQuestions() - 1));
+            finDeGame();
         }
     };
 
@@ -42,6 +39,8 @@ public class CalculActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btn_start = findViewById(R.id.btn_start);
         btn_rep0 = findViewById(R.id.btn_rep0);
@@ -85,6 +84,22 @@ public class CalculActivity extends AppCompatActivity {
         btn_rep1.setOnClickListener(answerButtonClickListener);
         btn_rep2.setOnClickListener(answerButtonClickListener);
         btn_rep3.setOnClickListener(answerButtonClickListener);
+
+    }
+
+    private void finDeGame(){
+        if( g.getScore() < 30){
+            Intent intent = new Intent(getApplicationContext(),CalculActivity.class);
+            startActivity(intent);
+            finish();
+        }else{
+            btn_rep0.setEnabled(false);
+            btn_rep1.setEnabled(false);
+            btn_rep2.setEnabled(false);
+            btn_rep3.setEnabled(false);
+            tv_bottommessage.setText("Le jeu est terminé : " + g.getNumberCorrect() + "/" + (g.getTotalQuestions() - 1));
+        }
+
     }
 
     private void nextTurn() {

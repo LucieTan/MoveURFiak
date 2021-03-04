@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="reveil.AlarmActivity">
+    tools:context="reveil.AlarmActivity"
+    android:background="@color/sable">
 
     <TimePicker
         android:layout_width="wrap_content"
@@ -19,7 +20,7 @@
         android:layout_below="@+id/alarmTimePicker"
         android:layout_centerHorizontal="true"
         android:onClick="onToggleClicked"
-        android:text="Set alarm" />
+        android:text="@string/txt_initialiser_alarm" />
 
     <TextView
         android:layout_width="wrap_content"

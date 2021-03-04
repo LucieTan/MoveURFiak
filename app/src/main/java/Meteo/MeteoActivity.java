@@ -28,6 +28,7 @@ public class MeteoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_meteo);
         et_ville=findViewById(R.id.et_ville);
         tv_degre=findViewById(R.id.tv_degre);

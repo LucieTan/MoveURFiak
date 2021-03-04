@@ -4,16 +4,16 @@
     <string name="label_meteo">Meteo</string>
     <string name="label_alarm">Réveil</string>
     <string name="label_soleil">Petit soleil</string>
-    <string name="label_inscription">"S'incrire"</string>
+    <string name="label_inscription">"S'inscrire"</string>
     <string name="label_connexion">"S'authentifier"</string>
     <string name="douce_phrase">Il est temps de se réveiller :)</string>
     <string name="label_soon">Encore 5 minutes</string>
     <string name="label_resoudre">Allons résoudre le puzzle !</string>
-    <string name="reveil_heure">Bouge ton boule</string>
+    <string name="reveil_heure">Réveil</string>
     <string name="label_validation">Valider</string>
     <string name="label_deconnexion">Déconnexion</string>
     <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
-
+    <string name="txt_initialiser_alarm">Set alarm</string>
     <!--Page authentification de l'utilisateur-->
     <string name="title_login">Connectez-vous sur</string>
     <string name="txt_ps_de_compte">Pas encore de compte ? Inscrivez-vous dès maintenant</string>

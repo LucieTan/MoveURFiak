@@ -59,8 +59,12 @@ public class AlarmActivity extends Activity {
             Log.d("MyActivity", "Alarm Off");
             Toast.makeText(this, "ALARME ANNULEE", Toast.LENGTH_SHORT).show();
         }
-    }
 
+
+    }
+    private void retour(){
+        finish();
+    }
     public void setAlarmText(String alarmText) {
         alarmTextView.setText(alarmText);
     }
