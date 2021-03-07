@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.moveurfiak.R;
 
@@ -19,32 +17,19 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Memory extends AppCompatActivity {
-
-    TextView tv_p1;
-
     ImageView iv_11, iv_12, iv_13, iv_14, iv_21, iv_22, iv_23, iv_24;
-
-    Integer[] cardArray ={101, 102, 103, 104, 201,202,203, 204};
-
-    int image101, image102, image103, image104, image201, image202, image203, image204;
+    Integer[] cardArray ={11, 12, 13, 14, 21,22,23, 24};
+    int image11,image12,image13,image14, image21,image22,image23,image24;
+    Chronometer chrono;
 
     int firstCard, secondCard,clickedFirst, clickedSecond;
     int cardNumber = 1;
-    int turn = 1;
-    int playerPoints = 0,cpuPoints = 0;
-
-    Chronometer chrono;
-    String timer ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        tv_p1 = (TextView) findViewById(R.id.tv_p1);
-        //tv_p2 = (TextView) findViewById(R.id.tv_p2);
         iv_11 = (ImageView) findViewById(R.id.iv_11);
         iv_12 = (ImageView) findViewById(R.id.iv_12);
         iv_13 = (ImageView) findViewById(R.id.iv_13);
@@ -64,7 +49,9 @@ public class Memory extends AppCompatActivity {
         iv_24.setTag("7");
 
         frontOfCardsRessources();
+
         Collections.shuffle(Arrays.asList(cardArray));
+
         chrono = (Chronometer) findViewById(R.id.chrono_memo);
         chrono.start();
 
@@ -127,34 +114,33 @@ public class Memory extends AppCompatActivity {
     }
 
     private void doStuff(ImageView iv, int card){
-        if(cardArray[card] ==101){
-            iv.setImageResource(image101);
-        }else if(cardArray[card] ==102){
-            iv.setImageResource(image102);
+        if(cardArray[card] ==11){
+            iv.setImageResource(image11);
+        }else if(cardArray[card] ==12){
+            iv.setImageResource(image12);
         }
-        else if(cardArray[card] ==103){
-            iv.setImageResource(image103);
+        else if(cardArray[card] ==13){
+            iv.setImageResource(image13);
         }
-        else if(cardArray[card] ==104){
-            iv.setImageResource(image104);
+        else if(cardArray[card] ==14){
+            iv.setImageResource(image14);
         }
-        else if(cardArray[card] ==201){
-            iv.setImageResource(image201);
+        else if(cardArray[card] ==21){
+            iv.setImageResource(image21);
         }
-        else if(cardArray[card] ==202){
-            iv.setImageResource(image202);
+        else if(cardArray[card] ==22){
+            iv.setImageResource(image22);
         }
-        else if(cardArray[card] == 203){
-            iv.setImageResource(image203);
+        else if(cardArray[card] == 23){
+            iv.setImageResource(image23);
         }
-        else if(cardArray[card] ==204){
-            iv.setImageResource(image204);
+        else if(cardArray[card] ==24){
+            iv.setImageResource(image24);
         }
-
         if(cardNumber == 1){
             firstCard =cardArray[card];
-            if(firstCard > 200){
-                firstCard=firstCard-100;
+            if(firstCard>20){
+                firstCard=firstCard-10;
             }
             cardNumber = 2;
             clickedFirst=card;
@@ -162,8 +148,8 @@ public class Memory extends AppCompatActivity {
 
         }else if(cardNumber ==2){
             secondCard =cardArray[card];
-            if(secondCard>200){
-                secondCard=secondCard-100;
+            if(secondCard>20){
+                secondCard=secondCard-10;
             }
             cardNumber = 1;
             clickedSecond=card;
@@ -177,7 +163,7 @@ public class Memory extends AppCompatActivity {
             iv_23.setEnabled(false);
             iv_24.setEnabled(false);
 
-            Handler handler = new Handler();
+            Handler handler =new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -206,7 +192,6 @@ public class Memory extends AppCompatActivity {
             }else if (clickedFirst == 7){
                 iv_24.setVisibility(View.INVISIBLE);
             }
-
             if(clickedSecond == 0){
                 iv_11.setVisibility(View.INVISIBLE);
             }else if (clickedSecond == 1){
@@ -224,8 +209,6 @@ public class Memory extends AppCompatActivity {
             }else if (clickedSecond == 7){
                 iv_24.setVisibility(View.INVISIBLE);
             }
-                playerPoints++;
-                tv_p1.setText("P1 :" + playerPoints);
 
         }else{
             iv_11.setImageResource(R.drawable.ic_moon);
@@ -236,8 +219,6 @@ public class Memory extends AppCompatActivity {
             iv_22.setImageResource(R.drawable.ic_moon);
             iv_23.setImageResource(R.drawable.ic_moon);
             iv_24.setImageResource(R.drawable.ic_moon);
-
-            tv_p1.setTextColor(Color.WHITE);
         }
 
         iv_11.setEnabled(true);
@@ -248,47 +229,36 @@ public class Memory extends AppCompatActivity {
         iv_22.setEnabled(true);
         iv_23.setEnabled(true);
         iv_24.setEnabled(true);
-        checkEnd(); // vérifie si le jeu est fini
+        FinDeJeu();
     }
 
-    private void checkEnd(){
-        if(iv_11.getVisibility() == View.INVISIBLE &&iv_12.getVisibility() == View.INVISIBLE &&
+    private void frontOfCardsRessources(){
+        image11 = R.drawable.ic_image101;
+        image12 = R.drawable.ic_image102;
+        image13 = R.drawable.ic_image103;
+        image14 = R.drawable.ic_image104;
+        image21 = R.drawable.ic_image201;
+        image22 = R.drawable.ic_image202;
+        image23 = R.drawable.ic_image203;
+        image24 = R.drawable.ic_image204;
+    }
+
+    private void FinDeJeu(){
+        if(iv_11.getVisibility() == View.INVISIBLE && iv_12.getVisibility() == View.INVISIBLE &&
                 iv_13.getVisibility() == View.INVISIBLE &&iv_14.getVisibility() == View.INVISIBLE &&
                 iv_21.getVisibility() == View.INVISIBLE &&iv_22.getVisibility() == View.INVISIBLE &&
                 iv_23.getVisibility() == View.INVISIBLE &&iv_24.getVisibility() == View.INVISIBLE ){
             chrono.stop();
-
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
             alertDialogBuilder
-                    .setMessage("Fin de jeu\n Vous avez pris : " + chrono.getText() + " sec")
+                    .setMessage("Vous avez pris " + chrono.getText() + "sec")
                     .setCancelable(false)
-                    .setPositiveButton("NEW", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("QUITTER", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getApplicationContext(), Memory.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    }).setNegativeButton("EXIT", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
-                }
-            });
+                        public void onClick(DialogInterface dialog, int which) {finish();}
+                    });
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
         }
     }
-
-    private void frontOfCardsRessources(){
-        image101 = R.drawable.ic_image101;
-        image102 = R.drawable.ic_image102;
-        image103 = R.drawable.ic_image103;
-        image104 = R.drawable.ic_image104;
-        image201 = R.drawable.ic_image201;
-        image202 = R.drawable.ic_image202;
-        image203 = R.drawable.ic_image203;
-        image204 = R.drawable.ic_image204;
-    }
-
 }
