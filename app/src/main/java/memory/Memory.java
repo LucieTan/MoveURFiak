@@ -237,10 +237,10 @@ public class Memory extends AppCompatActivity {
         image12 = R.drawable.ic_image102;
         image13 = R.drawable.ic_image103;
         image14 = R.drawable.ic_image104;
-        image21 = R.drawable.ic_image201;
-        image22 = R.drawable.ic_image202;
-        image23 = R.drawable.ic_image203;
-        image24 = R.drawable.ic_image204;
+        image21 = R.drawable.ic_image101;
+        image22 = R.drawable.ic_image102;
+        image23 = R.drawable.ic_image103;
+        image24 = R.drawable.ic_image104;
     }
 
     private void FinDeJeu(){

@@ -49,7 +49,6 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
-
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Veuillez saisir un e-mail");
                     return;
@@ -64,8 +63,7 @@ public class Login extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
-
-                //connexion de l'utilisateur
+                //Connexion de l'utilisateur
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -94,8 +92,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 EditText resetMail= new EditText(v.getContext());
                 AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
-                passwordResetDialog.setTitle("Rénitialiser le mot de passe ?");
-                passwordResetDialog.setMessage("Veuillez rentrer votre adresse mail pour recevoir un mail pour rénitialiser votre mot de passe");
+                passwordResetDialog.setTitle("Réinitialiser le mot de passe ?");
+                passwordResetDialog.setMessage("Veuillez rentrer votre adresse mail pour recevoir un mail pour réinitialiser votre mot de passe");
                 passwordResetDialog.setView(resetMail);
                 passwordResetDialog.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                     @Override
