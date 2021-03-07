@@ -51,4 +51,10 @@
     <string name="title_notifications">Notifications</string>
 
 
+    <string name="degre">Veuillez Patienter</string>
+    <string name="nouv_ville">Trouver une nouvelle ville !</string>
+    <string name="entr_ville">Entrez le nom de la ville</string>
+
+
+
 </resources>

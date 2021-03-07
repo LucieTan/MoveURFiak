@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import Meteo.MeteoActivity;
 import clicker.MeteoClickerActivity;
 import jeuCalcul.CalculActivity;

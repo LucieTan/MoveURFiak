@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +14,8 @@
         android:roundIcon="@drawable/logo_muf"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoveUrFiak">
+        <activity android:name="Meteo.MeteoActivity"></activity>
+        <activity android:name="Meteo.cityFinder" />
         <activity
             android:name="jeuCalcul.CalculActivity"
             android:parentActivityName=".Accueil" />
@@ -21,9 +24,6 @@
             android:parentActivityName=".Accueil" />
         <activity
             android:name="memory.Memory"
-            android:parentActivityName=".Accueil" />
-        <activity
-            android:name="Meteo.MeteoActivity"
             android:parentActivityName=".Accueil" />
         <activity
             android:name="clicker.MeteoClickerActivity"
