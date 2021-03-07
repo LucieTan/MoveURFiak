@@ -16,6 +16,8 @@ import com.example.moveurfiak.R;
 import java.util.Arrays;
 import java.util.Collections;
 
+import reveil.AlarmService;
+
 public class Memory extends AppCompatActivity {
     ImageView iv_11, iv_12, iv_13, iv_14, iv_21, iv_22, iv_23, iv_24;
     Integer[] cardArray ={11, 12, 13, 14, 21,22,23, 24};
@@ -259,6 +261,8 @@ public class Memory extends AppCompatActivity {
                     });
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
+            stopService(new Intent(this, AlarmService.class));
+            //finish();
         }
     }
 }

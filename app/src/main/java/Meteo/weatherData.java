@@ -60,13 +60,13 @@ public class weatherData {
             return "ic_snow_thunder";
         }
         else if(condition==903) {
-            return "ic_snow2";
+            return "ic_snow";
         }
         else if(condition==904) {
             return "ic_sun";
         }
         else if(condition>=905 && condition<=1000) {
-            return "ic_image202";
+            return "ic_image102";
         }
 
         return "dunno";

@@ -14,7 +14,8 @@
         android:roundIcon="@drawable/logo_muf"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoveUrFiak">
-        <activity android:name="Meteo.MeteoActivity"></activity>
+        <activity android:name="application.ProfilActivity"/>
+        <activity android:name="Meteo.MeteoActivity" />
         <activity android:name="Meteo.cityFinder" />
         <activity
             android:name="jeuCalcul.CalculActivity"
@@ -43,8 +44,6 @@
         <service
             android:name="reveil.AlarmService"
             android:enabled="true" />
-
-        <receiver android:name="reveil.AlarmReceiver" />
     </application>
 
 </manifest>

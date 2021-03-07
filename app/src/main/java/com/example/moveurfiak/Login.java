@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import application.ProfilActivity;
+
 public class Login extends AppCompatActivity {
     EditText mEmail, mPassword;
     Button mLoginBtn;
@@ -69,7 +71,7 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this, "Vous êtes bien connecté", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), Accueil.class));
+                            startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
                         }else{
                             Toast.makeText(Login.this, "Une erreur est survenue"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

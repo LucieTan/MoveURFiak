@@ -13,6 +13,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -20,12 +21,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.moveurfiak.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
 
+import application.ProfilActivity;
 import cz.msebera.android.httpclient.Header;
 
 
@@ -60,6 +63,7 @@ public class MeteoActivity extends AppCompatActivity {
         mCityFinder = findViewById(R.id.cityFinder);
         NameofCity = findViewById(R.id.cityName);
 
+
         mCityFinder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +72,31 @@ public class MeteoActivity extends AppCompatActivity {
 
             }
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+
+        bottomNavigationView.setSelectedItemId(R.id.meteo);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.reveil:
+                        startActivity(new Intent(getApplicationContext(), reveil.AlarmActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.profil:
+                        startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.meteo:
+                        return true;
+                }
+                return false;
+            }
+        });
+
+
     }
 
     @Override
@@ -153,7 +182,6 @@ public class MeteoActivity extends AppCompatActivity {
     }
 
     private void updateUI(weatherData weather){
-
         Temperature.setText(weather.getmTemperature());
         NameofCity.setText(weather.getMcity());
         weatherState.setText(weather.getmWeatherType());

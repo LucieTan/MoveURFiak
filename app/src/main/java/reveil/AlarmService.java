@@ -1,44 +1,41 @@
 package reveil;
 
-import android.app.IntentService;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
+import android.app.Service;
 import android.content.Intent;
-import android.util.Log;
-import com.example.moveurfiak.R;
+import android.media.MediaPlayer;
+import android.os.IBinder;
+import android.provider.Settings;
 
-import androidx.core.app.NotificationCompat;
+import androidx.annotation.Nullable;
 
+public class AlarmService extends Service {
+    private MediaPlayer player;
 
-public class AlarmService extends IntentService {
-    private NotificationManager alarmNotificationManager;
-
-    public AlarmService() {
-        super("AlarmService");
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
     }
 
     @Override
-    public void onHandleIntent(Intent intent) {
-        sendNotification("Wake Up! Wake Up!");
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        //prend l'alarme systeme par defaut
+        player = MediaPlayer.create(this,
+                Settings.System.DEFAULT_RINGTONE_URI);
+
+        //boucle qui mermet a l'alarme de sonner sans arrêt
+        player.setLooping(true);
+
+        //lancement de l'alarme sonore
+        player.start();
+        return START_STICKY;
     }
 
-    private void sendNotification(String msg) {
-        Log.d("AlarmService", "Preparing to send notification...: " + msg);
-        alarmNotificationManager = (NotificationManager) this
-                .getSystemService(Context.NOTIFICATION_SERVICE);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, AlarmActivity.class), 0);
-
-        NotificationCompat.Builder alarmNotificationBuilder = new NotificationCompat.Builder(
-                this).setContentTitle("Alarm").setSmallIcon(R.drawable.ic_launcher_background)
-                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
-                .setContentText(msg);
-
-
-        alarmNotificationBuilder.setContentIntent(contentIntent);
-        alarmNotificationManager.notify(1, alarmNotificationBuilder.build());
-        Log.d("AlarmService", "Notification sent.");
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //arrête l'alarme lorsque le service est interrompu (cf jeux)
+        player.stop();
     }
 }

@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import application.ProfilActivity;
+
 public class Register extends AppCompatActivity {
     EditText mEmail, mPseudo, mPassword;
     Button mRegisterBtn;
@@ -73,7 +75,7 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Register.this, "L'utilisateur a été crée", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),Accueil.class));
+                            startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
                         }else{
                             Toast.makeText(Register.this, "Error !"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

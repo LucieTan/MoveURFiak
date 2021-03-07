@@ -7,12 +7,28 @@
     android:background="@color/dark_blue"
     tools:context=".MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:itemBackground="@color/blue_green"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_nav" />
+
+    </RelativeLayout>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:id="@+id/weatherIcon"
         android:src="@drawable/finding"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/img">
 
     </ImageView>
 
@@ -64,22 +80,22 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/cityFinder"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/cityFinder"
-        android:background="@drawable/buttondesign"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/buttondesign">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="@string/nouv_ville"
             android:textColor="#ffffff"
-            android:layout_centerInParent="true"
             android:textSize="16sp">
 
         </TextView>

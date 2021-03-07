@@ -55,6 +55,10 @@
     <string name="nouv_ville">Trouver une nouvelle ville !</string>
     <string name="entr_ville">Entrez le nom de la ville</string>
 
+    <!-- Partie réveil -->
+    <string name="currentTimeText">Il est actuellement :</string>
+    <string name="alarmTimeText">Un réveil est prévu pour :</string>
+    <string name="alarmDescription">Vous pouvez programmer un réveil ci-dessus, à vos risques et périls</string>
 
 
 </resources>

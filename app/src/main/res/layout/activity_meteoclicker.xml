@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/img_fondFlou"
-        android:layout_width="359dp"
-        android:layout_height="541dp"
-
+        android:layout_width="360dp"
+        android:layout_height="540dp"
+        android:contentDescription="@string/img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.490"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.735"
@@ -22,12 +22,12 @@
 
     <ImageView
         android:id="@+id/tornado"
-        android:layout_width="136dp"
+        android:layout_width="135dp"
         android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
         android:layout_marginTop="175dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toTopOf="@+id/thunderstorm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -117,7 +117,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/hotsun"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
