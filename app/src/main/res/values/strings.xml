@@ -1,64 +1,85 @@
 <resources>
     <string name="app_name">MoveUrFiak</string>
-    <string name="label_profil">Profil</string>
-    <string name="label_meteo">Meteo</string>
-    <string name="label_alarm">Réveil</string>
-    <string name="label_soleil">Petit soleil</string>
-    <string name="label_inscription">"S'inscrire"</string>
-    <string name="label_connexion">"S'authentifier"</string>
-    <string name="douce_phrase">Il est temps de se réveiller :)</string>
-    <string name="label_soon">Encore 5 minutes</string>
-    <string name="label_resoudre">Allons résoudre le puzzle !</string>
-    <string name="reveil_heure">Réveil</string>
-    <string name="label_validation">Valider</string>
-    <string name="label_deconnexion">Déconnexion</string>
-    <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
+    <string name="label_profil">Profile</string>
+    <string name="label_meteo">weather</string>
+    <string name="label_alarm">Alarm clock</string>
+    <string name="label_soleil">Small Sun</string>
+    <string name="label_inscription">Sign up</string>
+    <string name="label_connexion">"Login"</string>
+    <string name="douce_phrase">It\'s time to wake up :)</string>
+    <string name="label_soon">5 more minutes</string>
+    <string name="label_resoudre">Let\'s go solve the puzzle !</string>
+    <string name="reveil_heure">Alarm clock</string>
+    <string name="label_validation">Validate</string>
+    <string name="label_deconnexion">Logout</string>
+    <string name="msg_bienvenue">Welcome to MoveUrFiak!!</string>
     <string name="txt_initialiser_alarm">Set alarm</string>
     <!--Page authentification de l'utilisateur-->
-    <string name="title_login">Connectez-vous sur</string>
-    <string name="txt_ps_de_compte">Pas encore de compte ? Inscrivez-vous dès maintenant</string>
+    <string name="title_login">Login to</string>
+    <string name="txt_ps_de_compte">No account yet ? Sign up now</string>
     <string name="label_mail">Email</string>
-    <string name="label_mdp">Mot de passe</string>
-    <string name="label_nickname">Pseudo</string>
+    <string name="label_mdp">Password</string>
+    <string name="label_nickname">Username</string>
 
     <!--Page d'inscription-->
-    <string name="title_signin">Inscrivez-vous sur</string>
-    <string name="txt_compte_existant">Vous avez déjà un compte ? Cliquez ici !</string>
+    <string name="title_signin">Register on</string>
+    <string name="txt_compte_existant">Already have an account? Click here to register !</string>
 
     <!--Partie jeu-->
-    <string name="label_ajt">Ajout alarme</string>
+    <string name="label_ajt">Add alarm</string>
     <string name="label_puzzle">Puzzle !!</string>
     <string name="label_Memory">Memory</string>
     <string name="label_pieces">piece</string>
     <string name="label_calcul">Calcul</string>
     <string name="label_score">Score :</string>
-    <string name="label_jouer">Jouer</string>
+    <string name="label_jouer">Play</string>
     <string name="label_clicker">Meteo Clicker</string>
     <string name="img">Image</string>
 
 
-    <string name="img_nuage">Petit nuage</string>
+    <string name="img_nuage">Small cloud</string>
 
 
-    <string name="mdp_oublie">Mot de passe oublié ?</string>
+    <string name="mdp_oublie">Forgot your password ?</string>
 
-    <string name="txt_appBouton">Appuyez sur le bouton pour connaitre la température !</string>
-    <string name="tv_ville"> Inserez votre ville ici</string>
-    <string name="meteoclicker">Cliquez sur l image pour la faire disparaître !</string>
+    <string name="txt_appBouton">Press the button to know the temperature !</string>
+    <string name="tv_ville"> Insert your city here</string>
+    <string name="meteoclicker">Click on the image to make it disappear !</string>
     <string name="title_activity_accueil">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
 
-    <string name="degre">Veuillez Patienter</string>
-    <string name="nouv_ville">Trouver une nouvelle ville !</string>
-    <string name="entr_ville">Entrez le nom de la ville</string>
+    <string name="degre">Please Wait</string>
+    <string name="nouv_ville">Find a new city !</string>
+    <string name="entr_ville">Enter the name of the city</string>
 
     <!-- Partie réveil -->
-    <string name="currentTimeText">Il est actuellement :</string>
-    <string name="alarmTimeText">Un réveil est prévu pour :</string>
-    <string name="alarmDescription">Vous pouvez programmer un réveil ci-dessus, à vos risques et périls</string>
+    <string name="currentTimeText">It is currently :</string>
+    <string name="alarmTimeText">An alarm clock is provided for :</string>
+    <string name="alarmDescription">You may set an alarm clock above at your own risk.</string>
+    <string name="title_activity_parametre">ParametreActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="langue">Language</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <!-- Langue -->
+
+    <string name="changeLang"> Change language</string>
 
 
 </resources>

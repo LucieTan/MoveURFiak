@@ -29,7 +29,7 @@
         android:id="@+id/weatherIcon"
         android:src="@drawable/finding"
         android:layout_marginTop="80dp"
-        android:contentDescription="@string/img">
+        android:contentDescription= "@string/img">
 
     </ImageView>
 
@@ -46,11 +46,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/temperature"
             android:paddingStart="30dp"
+            android:paddingEnd="0dp"
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:text="@string/degre"
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            android:paddingRight="0dp">
 
         </TextView>
 
@@ -97,7 +99,7 @@
             android:layout_centerInParent="true"
             android:text="@string/nouv_ville"
             android:textColor="#ffffff"
-            android:textSize="16sp">
+            android:textSize="15sp">
 
         </TextView>
 

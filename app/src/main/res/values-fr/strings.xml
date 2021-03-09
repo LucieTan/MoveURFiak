@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">MoveUrFiak</string>
+    <string name="label_profil">Profil</string>
+    <string name="label_meteo">Meteo</string>
+    <string name="label_alarm">Réveil</string>
+    <string name="label_soleil">Petit soleil</string>
+    <string name="label_inscription">S\'inscrire</string>
+    <string name="label_connexion">S\'authentifier</string>
+    <string name="douce_phrase">Il est temps de se réveiller :)</string>
+    <string name="label_soon">Encore 5 minutes</string>
+    <string name="label_resoudre">Allons résoudre le puzzle !</string>
+    <string name="reveil_heure">Réveil</string>
+    <string name="label_validation">Valider</string>
+    <string name="label_deconnexion">Déconnexion</string>
+    <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
+    <string name="txt_initialiser_alarm">Set alarm</string>
+    <!--Page authentification de l'utilisateur-->
+    <string name="title_login">Connectez-vous sur</string>
+    <string name="txt_ps_de_compte">Pas encore de compte ? Inscrivez-vous dès maintenant</string>
+    <string name="label_mail">Email</string>
+    <string name="label_mdp">Mot de passe</string>
+    <string name="label_nickname">Pseudo</string>
+
+    <!--Page d'inscription-->
+    <string name="title_signin">Inscrivez-vous sur</string>
+    <string name="txt_compte_existant">Vous avez déjà un compte ? Cliquez ici !</string>
+
+    <!--Partie jeu-->
+    <string name="label_ajt">Ajout alarme</string>
+    <string name="label_puzzle">Puzzle !!</string>
+    <string name="label_Memory">Memory</string>
+    <string name="label_pieces">piece</string>
+    <string name="label_calcul">Calcul</string>
+    <string name="label_score">Score :</string>
+    <string name="label_jouer">Jouer</string>
+    <string name="label_clicker">Meteo Clicker</string>
+    <string name="img">Image</string>
+
+
+    <string name="img_nuage">Petit nuage</string>
+
+
+    <string name="mdp_oublie">Mot de passe oublié ?</string>
+
+    <string name="txt_appBouton">Appuyez sur le bouton pour connaitre la température !</string>
+    <string name="tv_ville"> Inserez votre ville ici</string>
+    <string name="meteoclicker">Cliquez sur l image pour la faire disparaître !</string>
+    <string name="title_activity_accueil">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <string name="degre">Veuillez Patienter</string>
+    <string name="nouv_ville">Trouver une nouvelle ville !</string>
+    <string name="entr_ville">Entrez le nom de la ville</string>
+
+    <!-- Partie réveil -->
+    <string name="currentTimeText">Il est actuellement :</string>
+    <string name="alarmTimeText">Un réveil est prévu pour :</string>
+    <string name="alarmDescription">Vous pouvez programmer un réveil ci-dessus, à vos risques et périls</string>
+    <string name="title_activity_parametre">ParametreActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="langue">Langue</string>
+    <string name="reply_title">Action de réponse par défaut</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Synchroniser l\'email périodiquement</string>
+    <string name="attachment_title">Télécharger les pièces jointes entrantes</string>
+    <string name="attachment_summary_on">Télécharger automatiquement les pièces jointes des emails entrants
+    </string>
+    <string name="attachment_summary_off">Ne télécharger les pièces jointes que lorsqu\'elles sont demandées manuellement</string>
+
+
+    <!-- Langue -->
+
+    <string name="changeLang"> Changer de langue</string>
+
+
+</resources>

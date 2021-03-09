@@ -1,20 +1,28 @@
 package reveil;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.moveurfiak.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.Locale;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -26,6 +34,7 @@ import clicker.MeteoClickerActivity;
 import jeuCalcul.CalculActivity;
 import memory.Memory;
 
+
 public class AlarmActivity extends Activity {
     private TimePicker timePicker;
     private TextClock currentTime;
@@ -36,6 +45,12 @@ public class AlarmActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reveil);
+
+
+
+
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
         bottomNavigationView.setSelectedItemId(R.id.reveil);
@@ -44,8 +59,7 @@ public class AlarmActivity extends Activity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.reveil:
-                        return true;
+                    case R.id.reveil: return true;
                     case R.id.profil:
                         startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
                         overridePendingTransition(0, 0);
@@ -97,6 +111,8 @@ public class AlarmActivity extends Activity {
                 }
             }
         }, 0, 1000);
+
+        //langage
     }
 
     private void updateAlarmTime() {
@@ -150,5 +166,8 @@ public class AlarmActivity extends Activity {
         }
 
         return stringAlarmTime;
+
+
     }
+
 }

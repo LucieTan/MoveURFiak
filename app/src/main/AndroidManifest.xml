@@ -14,22 +14,21 @@
         android:roundIcon="@drawable/logo_muf"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoveUrFiak">
-        <activity android:name="application.ProfilActivity"/>
+        <activity
+            android:name="application.ParametreActivity"
+            android:label="@string/title_activity_parametre"/>
+        <activity android:name="application.ProfilActivity" />
         <activity android:name="Meteo.MeteoActivity" />
         <activity android:name="Meteo.cityFinder" />
-       <activity
-            android:name="jeuCalcul.CalculActivity"
-            android:parentActivityName=".Accueil" />
         <activity
-            android:name="reveil.AlarmActivity"
-            android:parentActivityName=".Accueil" />
+            android:name="jeuCalcul.CalculActivity"/>
         <activity
-            android:name="memory.Memory"
-            android:parentActivityName=".Accueil" />
+            android:name="reveil.AlarmActivity"/>
         <activity
-            android:name="clicker.MeteoClickerActivity"
-            android:parentActivityName=".Accueil" />
-        <activity android:name=".Accueil"/>
+            android:name="memory.Memory" />
+        <activity
+            android:name="clicker.MeteoClickerActivity" />
+        <!--<activity android:name=".Accueil" />-->
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".SplashScreenActivity">
