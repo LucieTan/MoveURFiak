@@ -4,7 +4,6 @@ package Meteo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -19,16 +18,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.moveurfiak.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-
 import org.json.JSONObject;
-
-import application.ProfilActivity;
 import cz.msebera.android.httpclient.Header;
 
 
@@ -63,16 +58,7 @@ public class MeteoActivity extends AppCompatActivity {
         mCityFinder = findViewById(R.id.cityFinder);
         NameofCity = findViewById(R.id.cityName);
 
-
-        mCityFinder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MeteoActivity.this, cityFinder.class);
-                startActivity(intent);
-
-            }
-        });
-
+        // nav barre
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
         bottomNavigationView.setSelectedItemId(R.id.meteo);
@@ -86,7 +72,7 @@ public class MeteoActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.profil:
-                        startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
+                        startActivity(new Intent(getApplicationContext(), application.ProfilActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.meteo:
@@ -96,14 +82,40 @@ public class MeteoActivity extends AppCompatActivity {
             }
         });
 
-
+        mCityFinder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeteoActivity.this, cityFinder.class);
+                startActivity(intent);
+            }
+        });
     }
+
+   /* @Override
+    protected void onResume() {
+        super.onResume();
+        getWeatherForCurrentLocation();
+    }*/
 
     @Override
     protected void onResume() {
         super.onResume();
-        getWeatherForCurrentLocation();
+        Intent mIntent = getIntent();
+        String city = mIntent.getStringExtra("City");
+        if(city!=null) {
+            getWeatherForNewCity(city);
+        }
+        else {
+            getWeatherForCurrentLocation();
+        }
     }
+    private void getWeatherForNewCity(String city) {
+        RequestParams params = new RequestParams();
+        params.put("q",city);
+        params.put("appid",APP_ID);
+        letsdoSomeNetworking(params);
+    }
+
 
     private void getWeatherForCurrentLocation() {
 
@@ -162,10 +174,8 @@ public class MeteoActivity extends AppCompatActivity {
     private void letsdoSomeNetworking(RequestParams params){
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(WEATHER_URL,params,new JsonHttpResponseHandler(){
-
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
                 Toast.makeText(MeteoActivity.this,"Données récupéré avec succès",Toast.LENGTH_SHORT).show();
 
                 weatherData weatherD=weatherData.fromJson(response);
@@ -182,6 +192,7 @@ public class MeteoActivity extends AppCompatActivity {
     }
 
     private void updateUI(weatherData weather){
+
         Temperature.setText(weather.getmTemperature());
         NameofCity.setText(weather.getMcity());
         weatherState.setText(weather.getmWeatherType());

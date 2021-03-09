@@ -1,7 +1,9 @@
 package jeuCalcul;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -12,9 +14,12 @@ import android.widget.TextView;
 
 import com.example.moveurfiak.R;
 
+import memory.Memory;
+import reveil.AlarmService;
+
 public class CalculActivity extends AppCompatActivity {
 
-    Button btn_start, btn_rep0, btn_rep1, btn_rep2, btn_rep3;
+    Button btn_rep0, btn_rep1, btn_rep2, btn_rep3;
     TextView tv_score, tv_questions, tv_timer, tv_bottommessage;
     ProgressBar prog_timer;
 
@@ -42,7 +47,6 @@ public class CalculActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        btn_start = findViewById(R.id.btn_start);
         btn_rep0 = findViewById(R.id.btn_rep0);
         btn_rep1 = findViewById(R.id.btn_rep1);
         btn_rep2 = findViewById(R.id.btn_rep2);
@@ -59,16 +63,9 @@ public class CalculActivity extends AppCompatActivity {
         tv_bottommessage.setText("Démarrez la partie !");
         tv_score.setText("0 pts");
         prog_timer.setMax(100);
+        nextTurn();
+        timer.start();
 
-        View.OnClickListener startButtonClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Button start_button = (Button) v;
-                start_button.setVisibility(View.INVISIBLE);
-                nextTurn();
-                timer.start();
-            }
-        };
         View.OnClickListener answerButtonClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,25 +76,33 @@ public class CalculActivity extends AppCompatActivity {
                 nextTurn();
             }
         };
-        btn_start.setOnClickListener(startButtonClickListener);
+
         btn_rep0.setOnClickListener(answerButtonClickListener);
         btn_rep1.setOnClickListener(answerButtonClickListener);
         btn_rep2.setOnClickListener(answerButtonClickListener);
         btn_rep3.setOnClickListener(answerButtonClickListener);
-
     }
 
     private void finDeGame(){
-        if( g.getScore() < 30){
+        if( g.getScore() < 70){
             Intent intent = new Intent(getApplicationContext(),CalculActivity.class);
             startActivity(intent);
             finish();
         }else{
-            btn_rep0.setEnabled(false);
-            btn_rep1.setEnabled(false);
-            btn_rep2.setEnabled(false);
-            btn_rep3.setEnabled(false);
-            tv_bottommessage.setText("Le jeu est terminé : " + g.getNumberCorrect() + "/" + (g.getTotalQuestions() - 1));
+            btn_rep0.setEnabled(false);btn_rep1.setEnabled(false);
+            btn_rep2.setEnabled(false);btn_rep3.setEnabled(false);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CalculActivity.this);
+            alertDialogBuilder
+                    .setMessage("Vous avez " +g.getScore() + " pts" + "\net " + g.getNumberCorrect() + " bonnes réponses sur : " + (g.getTotalQuestions()-1))
+                    .setCancelable(false)
+                    .setPositiveButton("QUITTER", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {finish();}
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+            stopService(new Intent(this, AlarmService.class));
+            //finish();
         }
 
     }

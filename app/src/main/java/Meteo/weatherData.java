@@ -3,9 +3,6 @@ package Meteo;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class weatherData {
 
     private String mTemperature,micon,mcity,mWeatherType;
@@ -29,7 +26,6 @@ public class weatherData {
             return null;
         }
     }
-
 
     private static String updateWeatherIcon(int condition) {
         if(condition>=0 && condition<=300) {
@@ -60,15 +56,14 @@ public class weatherData {
             return "ic_snow_thunder";
         }
         else if(condition==903) {
-            return "ic_snow";
+            return "ic_snow2";
         }
         else if(condition==904) {
             return "ic_sun";
         }
         else if(condition>=905 && condition<=1000) {
-            return "ic_image102";
+            return "ic_image202";
         }
-
         return "dunno";
     }
 

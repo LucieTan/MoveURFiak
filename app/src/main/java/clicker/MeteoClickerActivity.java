@@ -1,8 +1,13 @@
 package clicker;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,11 +15,16 @@ import com.example.moveurfiak.R;
 
 import java.util.Random;
 
+import Meteo.MeteoActivity;
+import jeuCalcul.CalculActivity;
+import reveil.AlarmService;
+
 public class MeteoClickerActivity extends AppCompatActivity {
     TextView textscore;
     ImageView tornado, hotsun, smilingsun, thunderstorm, smilingmoon, twoclouds;
     ImageView[] IMGS = {tornado, hotsun, smilingsun, thunderstorm, smilingmoon, twoclouds};
     int score = 0;
+    Chronometer timer;
     Boolean clicked = true;
 
     @Override
@@ -23,6 +33,8 @@ public class MeteoClickerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_meteoclicker);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        timer = (Chronometer) findViewById(R.id.chrono_clicker);
+        timer.start();
 
         textscore = findViewById(R.id.textscore);
         tornado = findViewById(R.id.tornado);
@@ -49,7 +61,7 @@ public class MeteoClickerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 IMGS[i].setVisibility(View.INVISIBLE);
                 score++;
-                textscore.setText("Score : " + score);
+                textscore.setText("Score : 0" + score);
                 newImage(IMGS);
             }
         });
@@ -74,6 +86,21 @@ public class MeteoClickerActivity extends AppCompatActivity {
                     newImage(IMGS);
                 }
             });
+        } else {
+            timer.stop();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MeteoClickerActivity.this);
+            alertDialogBuilder
+                    .setMessage("Vous avez pris : " + timer.getText()  + " sec")
+                    .setCancelable(false)
+                    .setPositiveButton("QUITTER", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {finish();}
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+            stopService(new Intent(this, AlarmService.class));
+
+            //finish();
         }
     }
 }

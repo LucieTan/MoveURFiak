@@ -121,7 +121,7 @@ public class AlarmActivity extends Activity {
         //lance le service d'alarme sonore
         startService(new Intent(this, AlarmService.class));
         //lance l'activité de jeu
-        Intent intent = new Intent(this, listGames[random()]);
+        Intent intent = new Intent(this, listGames[2]);
         startActivity(intent);
     }
 

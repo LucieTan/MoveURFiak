@@ -17,7 +17,7 @@
         <activity android:name="application.ProfilActivity"/>
         <activity android:name="Meteo.MeteoActivity" />
         <activity android:name="Meteo.cityFinder" />
-        <activity
+       <activity
             android:name="jeuCalcul.CalculActivity"
             android:parentActivityName=".Accueil" />
         <activity
@@ -29,7 +29,7 @@
         <activity
             android:name="clicker.MeteoClickerActivity"
             android:parentActivityName=".Accueil" />
-        <activity android:name=".Accueil" />
+        <activity android:name=".Accueil"/>
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".SplashScreenActivity">
