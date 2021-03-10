@@ -4,11 +4,11 @@
 
 
         <ListPreference
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
+            app:defaultValue="Anglais"
+            app:entries="@array/languages"
+            app:entryValues="@array/languages"
             app:key="reply"
-            app:title="@string/reply_title"
+            app:title="@string/langue"
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
@@ -17,8 +17,9 @@
 
         <SwitchPreferenceCompat
             app:key="sync"
+            app:title="@string/theme" />
 
-            app:title="@string/langue" />
+
 
         <SwitchPreferenceCompat
             app:dependency="sync"
@@ -28,10 +29,18 @@
             app:title="@string/attachment_title" />
 
     </PreferenceCategory>
+    <PreferenceCategory app:title="@string/messages_header">
 
 
 
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/languages"
+            app:entryValues="@array/languages"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
 
-
+    </PreferenceCategory>
 
 </PreferenceScreen>

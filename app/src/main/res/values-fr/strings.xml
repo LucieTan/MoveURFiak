@@ -16,6 +16,7 @@
     <string name="label_deconnexion">Déconnexion</string>
     <string name="msg_bienvenue">Bienvenue sur MoveUrFiak!!</string>
     <string name="txt_initialiser_alarm">Set alarm</string>
+
     <!--Page authentification de l'utilisateur-->
     <string name="title_login">Connectez-vous sur</string>
     <string name="txt_ps_de_compte">Pas encore de compte ? Inscrivez-vous dès maintenant</string>
@@ -68,7 +69,7 @@
     <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="langue">Langue</string>
+    <string name="langue">Langues</string>
     <string name="reply_title">Action de réponse par défaut</string>
 
     <!-- Sync Preferences -->
@@ -77,11 +78,10 @@
     <string name="attachment_summary_on">Télécharger automatiquement les pièces jointes des emails entrants
     </string>
     <string name="attachment_summary_off">Ne télécharger les pièces jointes que lorsqu\'elles sont demandées manuellement</string>
-
+    <string name="signature_title">Your signature</string>
+    <string name="theme">Thèmes</string>
 
     <!-- Langue -->
-
     <string name="changeLang"> Changer de langue</string>
-
 
 </resources>

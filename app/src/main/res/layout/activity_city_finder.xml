@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
     tools:context="Meteo.cityFinder">
 
+    <ImageView
+        android:id="@+id/img_fondFlou2"
+        android:layout_width="369dp"
+        android:layout_height="346dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667"
+        app:srcCompat="@drawable/fond_flou" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:id="@+id/searchCity"
+        android:layout_width="307dp"
+        android:layout_height="49dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:hint="@string/entr_ville"
-        android:layout_marginLeft="30dp"
-        android:textSize="20sp"
         android:background="@drawable/edittextdesign"
-        android:textColor="@color/dark_blue"
-        android:imeOptions="actionGo"
-        android:id="@+id/searchCity"
-        android:inputType="textAutoCorrect"
         android:gravity="center_vertical|center_horizontal"
-        android:layout_marginRight="30dp"
-        android:importantForAutofill="no">
+        android:hint="@string/entr_ville"
+        android:imeOptions="actionGo"
+        android:importantForAutofill="no"
+        android:inputType="textAutoCorrect"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </EditText>
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="188dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_moon"
+        android:contentDescription="@string/img"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

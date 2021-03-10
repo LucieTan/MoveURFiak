@@ -22,11 +22,22 @@ import java.util.Locale;
 
 public class ProfilActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale(); // language
         setContentView(R.layout.activity_profil);
+        Button nique = findViewById(R.id.btnnique);
+
+        nique.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ParametreActivity.class));
+                finish();
+            }
+        });
 
         //Language
         // Si on ne change pas le nom de l'actionbar ça prend la langue pas defaut du téléphone

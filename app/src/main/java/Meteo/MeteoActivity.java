@@ -165,28 +165,25 @@ public class MeteoActivity extends AppCompatActivity {
                 getWeatherForCurrentLocation();
             }
             else {
-
             }
         }
     }
-
-
     private void letsdoSomeNetworking(RequestParams params){
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(WEATHER_URL,params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Toast.makeText(MeteoActivity.this,"Données récupéré avec succès",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MeteoActivity.this,"Données récupérés avec succès",Toast.LENGTH_SHORT).show();
 
                 weatherData weatherD=weatherData.fromJson(response);
                 updateUI(weatherD);
 
-                //super.onSuccess(statusCode, headers, response);
+                super.onSuccess(statusCode, headers, response);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                //super.onFailure(statusCode, headers, throwable, errorResponse);
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }

@@ -41,7 +41,7 @@ public class Register extends AppCompatActivity {
 
         //Déjà un compte ? Envoie sur l'activité connexion
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), Register.class));
             finish();
         }
 
@@ -67,7 +67,6 @@ public class Register extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //inscription de l'utilisateur dans firebase
-
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

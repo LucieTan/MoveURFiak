@@ -25,14 +25,12 @@ public class MeteoClickerActivity extends AppCompatActivity {
     ImageView[] IMGS = {tornado, hotsun, smilingsun, thunderstorm, smilingmoon, twoclouds};
     int score = 0;
     Chronometer timer;
-    Boolean clicked = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meteoclicker);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         timer = (Chronometer) findViewById(R.id.chrono_clicker);
         timer.start();
 
