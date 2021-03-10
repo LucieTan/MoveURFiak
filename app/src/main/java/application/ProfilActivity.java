@@ -28,7 +28,6 @@ public class ProfilActivity extends AppCompatActivity {
         loadLocale(); // language
         setContentView(R.layout.activity_profil);
 
-
         //Language
         // Si on ne change pas le nom de l'actionbar ça prend la langue pas defaut du téléphone
         ActionBar actionBar = getSupportActionBar();
@@ -42,7 +41,6 @@ public class ProfilActivity extends AppCompatActivity {
                 showChangeLanguageDialog();
             }
         });
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 

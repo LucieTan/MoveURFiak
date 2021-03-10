@@ -45,7 +45,7 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         btn_rep0 = findViewById(R.id.btn_rep0);
         btn_rep1 = findViewById(R.id.btn_rep1);

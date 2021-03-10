@@ -14,23 +14,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 public class cityFinder extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_finder);
 
-        final EditText editText=findViewById(R.id.searchCity);
-        ImageView backButton=findViewById(R.id.backButton);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        final EditText editText=findViewById(R.id.searchCity);
 
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener(){
             @Override
@@ -39,7 +31,6 @@ public class cityFinder extends AppCompatActivity {
                 Intent intent = new Intent(cityFinder.this,MeteoActivity.class);
                 intent.putExtra("City",newCity);
                 startActivity(intent);
-
                 return false;
             }
         });

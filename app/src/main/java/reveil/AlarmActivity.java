@@ -46,11 +46,7 @@ public class AlarmActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reveil);
 
-
-
-
-
-
+        //nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
         bottomNavigationView.setSelectedItemId(R.id.reveil);
@@ -112,7 +108,6 @@ public class AlarmActivity extends Activity {
             }
         }, 0, 1000);
 
-        //langage
     }
 
     private void updateAlarmTime() {

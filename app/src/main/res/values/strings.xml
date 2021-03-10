@@ -1,4 +1,5 @@
 <resources>
+    <!--Général-->
     <string name="app_name">MoveUrFiak</string>
     <string name="label_profil">Profile</string>
     <string name="label_meteo">weather</string>
@@ -14,6 +15,7 @@
     <string name="label_deconnexion">Logout</string>
     <string name="msg_bienvenue">Welcome to MoveUrFiak!!</string>
     <string name="txt_initialiser_alarm">Set alarm</string>
+
     <!--Page authentification de l'utilisateur-->
     <string name="title_login">Login to</string>
     <string name="txt_ps_de_compte">No account yet ? Sign up now</string>
