@@ -5,23 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/sable"
-    tools:context=".Login">
+    tools:context=".Register">
 
 
     <TextView
-        android:id="@+id/text_connect"
+        android:id="@+id/text_inscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_login"
+        android:text="@string/title_signin"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
-
+        app:layout_constraintTop_toBottomOf="@+id/iv_sun"
+        app:layout_constraintVertical_bias="0.0" />
     <TextView
         android:id="@+id/txt_app"
         android:layout_width="wrap_content"
@@ -37,11 +35,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_connect" />
+        app:layout_constraintTop_toBottomOf="@+id/text_inscription" />
 
     <EditText
         android:id="@+id/Email"
-        android:layout_width="350dp"
+        android:layout_width="250dp"
         android:layout_height="45dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -50,78 +48,100 @@
         android:ems="10"
         android:hint="@string/label_mail"
         android:inputType="textEmailAddress"
+        android:textColor="@color/blue_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_connect"
-        app:layout_constraintVertical_bias="0.135"
+        app:layout_constraintTop_toBottomOf="@+id/text_inscription"
+        app:layout_constraintVertical_bias="0.070"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/pseudo"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:ems="10"
+        android:hint="@string/label_nickname"
+        android:textColor="@color/blue_green"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Email"
+        app:layout_constraintVertical_bias="0.045"
         android:autofillHints="" />
 
     <EditText
         android:id="@+id/mdp"
-        android:layout_width="353dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:ems="10"
         android:hint="@string/label_mdp"
         android:inputType="textPassword"
+        android:textColor="@color/blue_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email"
-        app:layout_constraintVertical_bias="0.107"
+        app:layout_constraintTop_toBottomOf="@+id/pseudo"
+        app:layout_constraintVertical_bias="0.050"
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="236dp"
-        android:layout_height="44dp"
-        android:text="@string/label_connexion"
+        android:id="@+id/registerBtn"
+        android:layout_width="235dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/title_signin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mdp"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.055" />
 
     <TextView
         android:id="@+id/txt_creation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:text="@string/txt_ps_de_compte"
-        android:textColor="@color/dark_green"
+        android:text="@string/txt_compte_existant"
+        android:textColor="@color/blue_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.080" />
-
+        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
+        app:layout_constraintVertical_bias="0.085" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/iv_sun"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173"
+        app:layout_constraintVertical_bias="0.012"
         app:srcCompat="@drawable/ic_sun"
-        android:contentDescription="@string/label_soleil" />
+        android:contentDescription="@string/label_soleil"/>
 
     <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
@@ -132,20 +152,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_creation" />
-    <TextView
-        android:id="@+id/oublie_mdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/mdp_oublie"
-        android:textColor="@color/blue_green"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_creation" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
