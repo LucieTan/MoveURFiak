@@ -19,12 +19,13 @@ import java.util.Collections;
 import reveil.AlarmService;
 
 public class Memory extends AppCompatActivity {
+    // déclaration des attributs
     ImageView iv_11, iv_12, iv_13, iv_14, iv_21, iv_22, iv_23, iv_24;
-    Integer[] cardArray ={11, 12, 13, 14, 21,22,23, 24};
-    int image11,image12,image13,image14, image21,image22,image23,image24;
+    Integer[] cardArray = {11, 12, 13, 14, 21, 22, 23, 24};
+    int image11, image12, image13, image14, image21, image22, image23, image24;
     Chronometer chrono;
 
-    int firstCard, secondCard,clickedFirst, clickedSecond;
+    int firstCard, secondCard, clickedFirst, clickedSecond;
     int cardNumber = 1;
 
     @Override
@@ -32,6 +33,7 @@ public class Memory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
 
+        //initialisation des images
         iv_11 = (ImageView) findViewById(R.id.iv_11);
         iv_12 = (ImageView) findViewById(R.id.iv_12);
         iv_13 = (ImageView) findViewById(R.id.iv_13);
@@ -41,6 +43,7 @@ public class Memory extends AppCompatActivity {
         iv_23 = (ImageView) findViewById(R.id.iv_23);
         iv_24 = (ImageView) findViewById(R.id.iv_24);
 
+        //attribut un tag à chaque image
         iv_11.setTag("0");
         iv_12.setTag("1");
         iv_13.setTag("2");
@@ -50,6 +53,7 @@ public class Memory extends AppCompatActivity {
         iv_23.setTag("6");
         iv_24.setTag("7");
 
+        //appel de la fonction qui affiche le dos des cartes
         frontOfCardsRessources();
 
         Collections.shuffle(Arrays.asList(cardArray));
@@ -114,47 +118,41 @@ public class Memory extends AppCompatActivity {
             }
         });
     }
-
-    private void doStuff(ImageView iv, int card){
-        if(cardArray[card] ==11){
+    // Verifie si deux cartes sont "identiques"
+    private void doStuff(ImageView iv, int card) {
+        if (cardArray[card] == 11) {
             iv.setImageResource(image11);
-        }else if(cardArray[card] ==12){
+        } else if (cardArray[card] == 12) {
             iv.setImageResource(image12);
-        }
-        else if(cardArray[card] ==13){
+        } else if (cardArray[card] == 13) {
             iv.setImageResource(image13);
-        }
-        else if(cardArray[card] ==14){
+        } else if (cardArray[card] == 14) {
             iv.setImageResource(image14);
-        }
-        else if(cardArray[card] ==21){
+        } else if (cardArray[card] == 21) {
             iv.setImageResource(image21);
-        }
-        else if(cardArray[card] ==22){
+        } else if (cardArray[card] == 22) {
             iv.setImageResource(image22);
-        }
-        else if(cardArray[card] == 23){
+        } else if (cardArray[card] == 23) {
             iv.setImageResource(image23);
-        }
-        else if(cardArray[card] ==24){
+        } else if (cardArray[card] == 24) {
             iv.setImageResource(image24);
         }
-        if(cardNumber == 1){
-            firstCard =cardArray[card];
-            if(firstCard>20){
-                firstCard=firstCard-10;
+        if (cardNumber == 1) {
+            firstCard = cardArray[card];
+            if (firstCard > 20) {
+                firstCard = firstCard - 10;
             }
             cardNumber = 2;
-            clickedFirst=card;
+            clickedFirst = card;
             iv.setEnabled(false);
 
-        }else if(cardNumber ==2){
-            secondCard =cardArray[card];
-            if(secondCard>20){
-                secondCard=secondCard-10;
+        } else if (cardNumber == 2) {
+            secondCard = cardArray[card];
+            if (secondCard > 20) {
+                secondCard = secondCard - 10;
             }
             cardNumber = 1;
-            clickedSecond=card;
+            clickedSecond = card;
 
             iv_11.setEnabled(false);
             iv_12.setEnabled(false);
@@ -165,7 +163,7 @@ public class Memory extends AppCompatActivity {
             iv_23.setEnabled(false);
             iv_24.setEnabled(false);
 
-            Handler handler =new Handler();
+            Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -175,44 +173,44 @@ public class Memory extends AppCompatActivity {
         }
     }
 
-    private void calculate(){
-        if(firstCard == secondCard){
-            if(clickedFirst == 0){
+    private void calculate() {
+        if (firstCard == secondCard) {
+            if (clickedFirst == 0) {
                 iv_11.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 1){
+            } else if (clickedFirst == 1) {
                 iv_12.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 2){
+            } else if (clickedFirst == 2) {
                 iv_13.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 3){
+            } else if (clickedFirst == 3) {
                 iv_14.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 4){
+            } else if (clickedFirst == 4) {
                 iv_21.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 5){
+            } else if (clickedFirst == 5) {
                 iv_22.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 6){
+            } else if (clickedFirst == 6) {
                 iv_23.setVisibility(View.INVISIBLE);
-            }else if (clickedFirst == 7){
+            } else if (clickedFirst == 7) {
                 iv_24.setVisibility(View.INVISIBLE);
             }
-            if(clickedSecond == 0){
+            if (clickedSecond == 0) {
                 iv_11.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 1){
+            } else if (clickedSecond == 1) {
                 iv_12.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 2){
+            } else if (clickedSecond == 2) {
                 iv_13.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 3){
+            } else if (clickedSecond == 3) {
                 iv_14.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 4){
+            } else if (clickedSecond == 4) {
                 iv_21.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 5){
+            } else if (clickedSecond == 5) {
                 iv_22.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 6){
+            } else if (clickedSecond == 6) {
                 iv_23.setVisibility(View.INVISIBLE);
-            }else if (clickedSecond == 7){
+            } else if (clickedSecond == 7) {
                 iv_24.setVisibility(View.INVISIBLE);
             }
 
-        }else{
+        } else {
             iv_11.setImageResource(R.drawable.ic_moon);
             iv_12.setImageResource(R.drawable.ic_moon);
             iv_13.setImageResource(R.drawable.ic_moon);
@@ -234,7 +232,7 @@ public class Memory extends AppCompatActivity {
         FinDeJeu();
     }
 
-    private void frontOfCardsRessources(){
+    private void frontOfCardsRessources() {
         image11 = R.drawable.ic_image101;
         image12 = R.drawable.ic_image102;
         image13 = R.drawable.ic_image103;
@@ -244,12 +242,12 @@ public class Memory extends AppCompatActivity {
         image23 = R.drawable.ic_image103;
         image24 = R.drawable.ic_image104;
     }
-
-    private void FinDeJeu(){
-        if(iv_11.getVisibility() == View.INVISIBLE && iv_12.getVisibility() == View.INVISIBLE &&
-                iv_13.getVisibility() == View.INVISIBLE &&iv_14.getVisibility() == View.INVISIBLE &&
-                iv_21.getVisibility() == View.INVISIBLE &&iv_22.getVisibility() == View.INVISIBLE &&
-                iv_23.getVisibility() == View.INVISIBLE &&iv_24.getVisibility() == View.INVISIBLE ){
+    // Vérifie s'il n'y a plus d'images visible sur la page
+    private void FinDeJeu() {
+        if (iv_11.getVisibility() == View.INVISIBLE && iv_12.getVisibility() == View.INVISIBLE &&
+                iv_13.getVisibility() == View.INVISIBLE && iv_14.getVisibility() == View.INVISIBLE &&
+                iv_21.getVisibility() == View.INVISIBLE && iv_22.getVisibility() == View.INVISIBLE &&
+                iv_23.getVisibility() == View.INVISIBLE && iv_24.getVisibility() == View.INVISIBLE) {
             chrono.stop();
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
             alertDialogBuilder
@@ -257,12 +255,13 @@ public class Memory extends AppCompatActivity {
                     .setCancelable(false)
                     .setPositiveButton("QUITTER", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which) {finish();}
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
                     });
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
             stopService(new Intent(this, AlarmService.class));
-            //finish();
         }
     }
 }

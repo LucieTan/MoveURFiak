@@ -45,8 +45,6 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
 
-
-
         btn_rep0 = findViewById(R.id.btn_rep0);
         btn_rep1 = findViewById(R.id.btn_rep1);
         btn_rep2 = findViewById(R.id.btn_rep2);
@@ -83,6 +81,7 @@ public class CalculActivity extends AppCompatActivity {
         btn_rep3.setOnClickListener(answerButtonClickListener);
     }
 
+    // Fonction fin de jeu, si score inférieur à 70 le jeu recommence en boucle
     private void finDeGame(){
         if( g.getScore() < 70){
             Intent intent = new Intent(getApplicationContext(),CalculActivity.class);
@@ -91,6 +90,7 @@ public class CalculActivity extends AppCompatActivity {
         }else{
             btn_rep0.setEnabled(false);btn_rep1.setEnabled(false);
             btn_rep2.setEnabled(false);btn_rep3.setEnabled(false);
+            // Pop up qui affiche le nombre de points et le nombre de bonne réponse
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CalculActivity.this);
             alertDialogBuilder
                     .setMessage("Vous avez " +g.getScore() + " pts" + "\net " + g.getNumberCorrect() + " bonnes réponses sur : " + (g.getTotalQuestions()-1))
@@ -102,11 +102,10 @@ public class CalculActivity extends AppCompatActivity {
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
             stopService(new Intent(this, AlarmService.class));
-            //finish();
         }
-
     }
 
+    // Change de calcul à chaque fois que l'on appuie sur une réponse
     private void nextTurn() {
         g.makeNewQuestion();
         int [] answer = g.getCurrentQuestion().getAnswerArray();
