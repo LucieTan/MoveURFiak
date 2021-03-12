@@ -40,7 +40,6 @@ public class ProfilActivity extends AppCompatActivity {
         });
 
         //Language
-        // Si on ne change pas le nom de l'actionbar ça prend la langue pas defaut du téléphone
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
 
@@ -77,7 +76,7 @@ public class ProfilActivity extends AppCompatActivity {
     }
 // Language SUITE
     private void showChangeLanguageDialog() {
-        // Tableau de langues à afficher dans la boîte de dialogue d'alerte
+        // Tableau des langues à afficher dans la boîte de dialogue d'alerte
         final String[] listItems = {"French","English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProfilActivity.this);
         mBuilder.setTitle("Choose Language...");
@@ -85,12 +84,12 @@ public class ProfilActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (i == 0) {
-                    //French
+                    //Français
                     setLocale("fr");
                     recreate();
                 }
                 if (i == 1) {
-                    //ENGLISH
+                    //Anglais
                     setLocale("en");
                     recreate();
                 }

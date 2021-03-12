@@ -20,13 +20,13 @@ import reveil.AlarmService;
 
 public class Memory extends AppCompatActivity {
     // déclaration des attributs
-    ImageView iv_11, iv_12, iv_13, iv_14, iv_21, iv_22, iv_23, iv_24;
-    Integer[] cardArray = {11, 12, 13, 14, 21, 22, 23, 24};
-    int image11, image12, image13, image14, image21, image22, image23, image24;
-    Chronometer chrono;
+    private ImageView iv_11, iv_12, iv_13, iv_14, iv_21, iv_22, iv_23, iv_24;
+    private Integer[] cardArray = {11, 12, 13, 14, 21, 22, 23, 24};
+    private int image11, image12, image13, image14, image21, image22, image23, image24;
+    private Chronometer chrono;
 
-    int firstCard, secondCard, clickedFirst, clickedSecond;
-    int cardNumber = 1;
+    private int firstCard, secondCard, clickedFirst, clickedSecond;
+    private int cardNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +34,14 @@ public class Memory extends AppCompatActivity {
         setContentView(R.layout.activity_memory);
 
         //initialisation des images
-        iv_11 = (ImageView) findViewById(R.id.iv_11);
-        iv_12 = (ImageView) findViewById(R.id.iv_12);
-        iv_13 = (ImageView) findViewById(R.id.iv_13);
-        iv_14 = (ImageView) findViewById(R.id.iv_14);
-        iv_21 = (ImageView) findViewById(R.id.iv_21);
-        iv_22 = (ImageView) findViewById(R.id.iv_22);
-        iv_23 = (ImageView) findViewById(R.id.iv_23);
-        iv_24 = (ImageView) findViewById(R.id.iv_24);
+        iv_11 = findViewById(R.id.iv_11);
+        iv_12 = findViewById(R.id.iv_12);
+        iv_13 = findViewById(R.id.iv_13);
+        iv_14 = findViewById(R.id.iv_14);
+        iv_21 = findViewById(R.id.iv_21);
+        iv_22 = findViewById(R.id.iv_22);
+        iv_23 = findViewById(R.id.iv_23);
+        iv_24 = findViewById(R.id.iv_24);
 
         //attribut un tag à chaque image
         iv_11.setTag("0");
@@ -118,6 +118,7 @@ public class Memory extends AppCompatActivity {
             }
         });
     }
+
     // Verifie si deux cartes sont "identiques"
     private void doStuff(ImageView iv, int card) {
         if (cardArray[card] == 11) {
@@ -242,6 +243,7 @@ public class Memory extends AppCompatActivity {
         image23 = R.drawable.ic_image103;
         image24 = R.drawable.ic_image104;
     }
+
     // Vérifie s'il n'y a plus d'images visible sur la page
     private void FinDeJeu() {
         if (iv_11.getVisibility() == View.INVISIBLE && iv_12.getVisibility() == View.INVISIBLE &&

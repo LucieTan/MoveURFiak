@@ -81,7 +81,10 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        //Lien cliquable lorsque nous n'avons pas de compte
+        /*Lien cliquable lorsque nous n'avons pas de compte
+        * Redirection vers l'activité d'inscription
+        */
+
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +105,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // récupération du mail pour envoyer le mail de rénitialisation
-                        String mail =resetMail.getText().toString();
+                        String mail = resetMail.getText().toString();
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
