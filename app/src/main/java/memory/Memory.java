@@ -12,6 +12,9 @@ import android.widget.Chronometer;
 import android.widget.ImageView;
 
 import com.example.moveurfiak.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,6 +27,8 @@ public class Memory extends AppCompatActivity {
     private Integer[] cardArray = {11, 12, 13, 14, 21, 22, 23, 24};
     private int image11, image12, image13, image14, image21, image22, image23, image24;
     private Chronometer chrono;
+    DatabaseReference ref;
+
 
     private int firstCard, secondCard, clickedFirst, clickedSecond;
     private int cardNumber = 1;
@@ -32,6 +37,8 @@ public class Memory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
+
+        ref = FirebaseDatabase.getInstance().getReference("Utilisateur");
 
         //initialisation des images
         iv_11 = findViewById(R.id.iv_11);
@@ -251,6 +258,7 @@ public class Memory extends AppCompatActivity {
                 iv_21.getVisibility() == View.INVISIBLE && iv_22.getVisibility() == View.INVISIBLE &&
                 iv_23.getVisibility() == View.INVISIBLE && iv_24.getVisibility() == View.INVISIBLE) {
             chrono.stop();
+
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
             alertDialogBuilder
                     .setMessage("Vous avez pris " + chrono.getText() + "sec")
@@ -265,5 +273,6 @@ public class Memory extends AppCompatActivity {
             alertDialog.show();
             stopService(new Intent(this, AlarmService.class));
         }
+        ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("timerMemor").setValue(chrono.getText());
     }
 }

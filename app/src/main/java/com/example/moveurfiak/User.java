@@ -16,7 +16,7 @@ public class User {
     }
 
     public User(String email, String pseudo) {
-        this.alarm = "00";
+        this.alarm = "0";
         this.email = email;
         this.pseudo = pseudo;
         this.timerClicker = "0";

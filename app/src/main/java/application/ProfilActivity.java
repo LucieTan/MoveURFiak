@@ -15,8 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.moveurfiak.Login;
 import com.example.moveurfiak.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Locale;
 
@@ -119,5 +121,9 @@ public class ProfilActivity extends AppCompatActivity {
         String language = prefs.getString("My_Lang", "");
         setLocale(language);
     }
-
+    public void deconnexion(View view){
+        FirebaseAuth.getInstance().signOut(); // Déconnexion de l'utilisateur
+        startActivity(new Intent(getApplicationContext(), Login.class));
+        finish();
+    }
 }

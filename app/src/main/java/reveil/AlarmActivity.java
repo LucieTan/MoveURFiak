@@ -21,6 +21,9 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.example.moveurfiak.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Locale;
 import java.util.Random;
@@ -36,15 +39,20 @@ import memory.Memory;
 
 
 public class AlarmActivity extends Activity {
+    private static int TMP_LIMITE = 10;
     private TimePicker timePicker;
     private TextClock currentTime;
     private TextView alarmTime;
     private Class<?>[] listGames = {MeteoClickerActivity.class, Memory.class, CalculActivity.class};
 
+    DatabaseReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reveil);
+
+        ref = FirebaseDatabase.getInstance().getReference("Utilisateur");
 
         //nav
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
@@ -139,7 +147,7 @@ public class AlarmActivity extends Activity {
     //retourne un entier aléatoire parmi 0, 1 et 2
     private int random() {
         Random r = new Random();
-        int i = r.nextInt(2 - 0) + 0;
+        int i = r.nextInt(2);
         return i;
     }
 
@@ -150,19 +158,19 @@ public class AlarmActivity extends Activity {
         String stringAlarmTime = alarmHour.toString().concat(":").concat(alarmMinute.toString());
 
         //ajouts de "0" nécessaires à la comparaison de chaînes de caractères
-        if(alarmMinute < 10) {
+        if(alarmMinute < TMP_LIMITE) {
             stringAlarmTime = alarmHour.toString().concat(":0").concat(alarmMinute.toString());
         }
-        if(alarmHour < 10) {
+        if(alarmHour < TMP_LIMITE) {
             stringAlarmTime = ("0").concat(alarmHour.toString()).concat(":").concat(alarmMinute.toString());
         }
-        if(alarmHour < 10 && alarmMinute < 10) {
+        if(alarmHour < TMP_LIMITE && alarmMinute < TMP_LIMITE) {
             stringAlarmTime = ("0").concat(alarmHour.toString()).concat(":0").concat(alarmMinute.toString());
         }
-
+        ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("alarm").setValue(stringAlarmTime);
         return stringAlarmTime;
 
 
-    }
 
+    }
 }

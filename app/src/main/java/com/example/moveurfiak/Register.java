@@ -18,9 +18,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Calendar;
-
-
 public class Register extends AppCompatActivity {
     EditText mEmail, mPseudo, mPassword;
     Button mRegisterBtn;
@@ -79,15 +76,15 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             User user = new User(email, pseudo);
+                            String pseudo = user.pseudo;
                             FirebaseDatabase.getInstance().getReference("Utilisateur")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(Register.this, "L'utilisateur a été crée", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Register.this, "L'utilisateur a été crée ! Bienvenu " + pseudo, Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getApplicationContext(), application.ProfilActivity.class));
-
                                     } else {
                                         Toast.makeText(Register.this, "Erreur lors de l'inscription. Veuillez réessayer", Toast.LENGTH_SHORT).show();
                                     }
@@ -98,8 +95,6 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-
-
         mConnexionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

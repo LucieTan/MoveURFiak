@@ -2,7 +2,6 @@ package jeuCalcul;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.example.moveurfiak.R;
+import com.example.moveurfiak.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import memory.Memory;
 import reveil.AlarmService;
 
 public class CalculActivity extends AppCompatActivity {
@@ -22,6 +24,9 @@ public class CalculActivity extends AppCompatActivity {
     Button btn_rep0, btn_rep1, btn_rep2, btn_rep3;
     TextView tv_score, tv_questions, tv_timer, tv_bottommessage;
     ProgressBar prog_timer;
+    DatabaseReference reference;
+    FirebaseUser user;
+    int meilleurScore;
 
     Jeu g = new Jeu();
     int secondsRemaining = 30;
@@ -44,6 +49,14 @@ public class CalculActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
+
+        reference = FirebaseDatabase.getInstance().getReference("Utilisateur");
+       /* user = FirebaseAuth.getInstance().getCurrentUser();
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+           reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("scoreCalcul").get;
+        }
+        meilleurScore = user.*/
+
 
         btn_rep0 = findViewById(R.id.btn_rep0);
         btn_rep1 = findViewById(R.id.btn_rep1);
@@ -103,6 +116,7 @@ public class CalculActivity extends AppCompatActivity {
             alertDialog.show();
             stopService(new Intent(this, AlarmService.class));
         }
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("scoreCalcul").setValue(g.getScore());
     }
 
     // Change de calcul à chaque fois que l'on appuie sur une réponse
@@ -123,4 +137,5 @@ public class CalculActivity extends AppCompatActivity {
         tv_questions.setText(g.getCurrentQuestion().getQuestionPhrase());
         tv_bottommessage.setText(g.getNumberCorrect() + "/" + (g.getTotalQuestions() -1 ));
     }
+
 }
