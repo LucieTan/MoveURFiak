@@ -21,6 +21,12 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import application.ProfilActivity;
 import reveil.AlarmActivity;
@@ -29,8 +35,13 @@ public class Login extends AppCompatActivity {
     EditText mEmail, mPassword;
     Button mLoginBtn;
     TextView mCreateBtn, forgotTextLink;
-    FirebaseAuth fAuth;
     ProgressBar progressBar;
+
+    //Firebase
+    FirebaseAuth fAuth;
+    FirebaseUser user;
+    DatabaseReference reference;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +82,28 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this, "Vous êtes bien connecté", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
-                        }else{
+                            user = FirebaseAuth.getInstance().getCurrentUser();
+                            reference = FirebaseDatabase.getInstance().getReference("Utilisateur");
+                            userID = user.getUid();
+                            reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener(){
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot){
+                                    User user = snapshot.getValue(User.class);
+                                    if(user != null){
+                                        String pseudo = user.pseudo;
+                                        //int score = user.scoreCalcul;
+                                        Toast.makeText(Login.this, "Connexion réussie ! Bienvenue " + pseudo + " !" , Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), ProfilActivity.class));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error){
+                                    Toast.makeText(Login.this, "Une erreur est survenue ! Veuillez réessayer", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                        else{
                             Toast.makeText(Login.this, "Une erreur est survenue"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -81,7 +111,9 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        //Lien cliquable lorsque nous n'avons pas de compte
+        /*Lien cliquable lorsque nous n'avons pas de compte
+        * Redirection vers l'activité d'inscription
+        */
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +134,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // récupération du mail pour envoyer le mail de rénitialisation
-                        String mail =resetMail.getText().toString();
+                        String mail = resetMail.getText().toString();
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {

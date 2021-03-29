@@ -7,7 +7,7 @@
             app:defaultValue="Anglais"
             app:entries="@array/languages"
             app:entryValues="@array/languages"
-            app:key="reply"
+            app:key="Anglais"
             app:title="@string/langue"
             app:useSimpleSummaryProvider="true" />
 
@@ -19,8 +19,6 @@
             app:key="sync"
             app:title="@string/theme" />
 
-
-
         <SwitchPreferenceCompat
             app:dependency="sync"
             app:key="attachment"
@@ -30,8 +28,6 @@
 
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/messages_header">
-
-
 
         <ListPreference
             app:defaultValue="reply"

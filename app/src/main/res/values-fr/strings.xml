@@ -47,7 +47,7 @@
 
     <string name="txt_appBouton">Appuyez sur le bouton pour connaitre la température !</string>
     <string name="tv_ville"> Inserez votre ville ici</string>
-    <string name="meteoclicker">Cliquez sur l image pour la faire disparaître !</string>
+    <string name="meteoclicker">Cliquez sur l\'image pour la faire disparaître !</string>
     <string name="title_activity_accueil">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

@@ -14,4 +14,13 @@ public class User {
         this.scoreCalcul = scoreCalcul;
         this.timerMemor= timerMemor;
     }
+
+    public User(String email, String pseudo) {
+        this.alarm = "0";
+        this.email = email;
+        this.pseudo = pseudo;
+        this.timerClicker = "0";
+        this.scoreCalcul = 0;
+        this.timerMemor= "0";
+    }
 }

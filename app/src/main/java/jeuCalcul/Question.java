@@ -7,7 +7,7 @@ public class Question {
     private int firstNumber;
     private int secondNumber;
     private int answer;
-    private int [] answerArray;
+    private int[] answerArray;
     private int answerPosition;
     private int upperLimit;
     private String questionPhrase;
@@ -15,7 +15,7 @@ public class Question {
     /*
 
      */
-
+    // Génère la question ainsi que les 4 réponses proposés.
     public Question(int upperLimit) {
         this.upperLimit = upperLimit;
         Random randomNumberMaker = new Random();
@@ -26,7 +26,7 @@ public class Question {
         this.questionPhrase = firstNumber + " + " + secondNumber + " = ";
 
         this.answerPosition = randomNumberMaker.nextInt(4);
-        this.answerArray = new int[] {0,1,2,3};
+        this.answerArray = new int[]{0, 1, 2, 3};
 
         this.answerArray[0] = answer + 1;
         this.answerArray[1] = answer + 10;
@@ -35,8 +35,11 @@ public class Question {
 
         this.answerArray = shuffleArray(this.answerArray);
 
+        // Appel de la fonction pour placer aléatoirement les réponses
         answerArray[answerPosition] = answer;
     }
+
+    // Les positions des réponses sont placés aléatoirement.
     private int[] shuffleArray(int[] array) {
         int index, temp;
         Random randomNumberGenerator = new Random();
@@ -50,12 +53,15 @@ public class Question {
         return array;
     }
 
+    // Getters qui récupèrent les attributs des réponses
     public int getAnswer() {
         return answer;
     }
+
     public int[] getAnswerArray() {
         return answerArray;
     }
+
     public String getQuestionPhrase() {
         return questionPhrase;
     }

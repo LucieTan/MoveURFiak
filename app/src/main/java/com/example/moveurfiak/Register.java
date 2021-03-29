@@ -16,7 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
     EditText mEmail, mPseudo, mPassword;
@@ -24,7 +24,6 @@ public class Register extends AppCompatActivity {
     TextView mConnexionBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +49,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String email = mEmail.getText().toString();
                 String password = mPassword.getText().toString();
+                String pseudo = mPseudo.getText().toString();
 
                 if(email.isEmpty()){
                     mEmail.setError("Veuillez saisir un e-mail");
@@ -64,24 +64,37 @@ public class Register extends AppCompatActivity {
                     mPassword.setError("Password Must be >= 8 caractères");
                     return;
                 }
+
+                if(pseudo.isEmpty()){
+                    mPseudo.setError("Votre pseudo est invalide !");
+                }
                 progressBar.setVisibility(View.VISIBLE);
 
                 //inscription de l'utilisateur dans firebase
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(Register.this, "L'utilisateur a été crée", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), application.ProfilActivity.class));
-                        }else{
-                            Toast.makeText(Register.this, "Error !"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        if(task.isSuccessful()) {
+                            User user = new User(email, pseudo);
+                            String pseudo = user.pseudo;
+                            FirebaseDatabase.getInstance().getReference("Utilisateur")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(Register.this, "L'utilisateur a été crée ! Bienvenu " + pseudo, Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), application.ProfilActivity.class));
+                                    } else {
+                                        Toast.makeText(Register.this, "Erreur lors de l'inscription. Veuillez réessayer", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                         }
                     }
                 });
             }
         });
-
-
         mConnexionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

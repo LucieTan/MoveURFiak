@@ -152,6 +152,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="10dp"
                 android:height="200dp"
+
                 android:backgroundTint="@color/space_blue"
                 android:text="@string/label_calcul" />
 

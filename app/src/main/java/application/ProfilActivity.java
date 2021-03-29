@@ -14,14 +14,23 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.moveurfiak.Login;
 import com.example.moveurfiak.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
 public class ProfilActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -29,18 +38,8 @@ public class ProfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         loadLocale(); // language
         setContentView(R.layout.activity_profil);
-        Button nique = findViewById(R.id.btnnique);
-
-        nique.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ParametreActivity.class));
-                finish();
-            }
-        });
 
         //Language
-        // Si on ne change pas le nom de l'actionbar ça prend la langue pas defaut du téléphone
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getResources().getString(R.string.app_name));
 
@@ -77,7 +76,7 @@ public class ProfilActivity extends AppCompatActivity {
     }
 // Language SUITE
     private void showChangeLanguageDialog() {
-        // Tableau de langues à afficher dans la boîte de dialogue d'alerte
+        // Tableau des langues à afficher dans la boîte de dialogue d'alerte
         final String[] listItems = {"French","English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProfilActivity.this);
         mBuilder.setTitle("Choose Language...");
@@ -85,12 +84,12 @@ public class ProfilActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (i == 0) {
-                    //French
+                    //Français
                     setLocale("fr");
                     recreate();
                 }
                 if (i == 1) {
-                    //ENGLISH
+                    //Anglais
                     setLocale("en");
                     recreate();
                 }
@@ -120,5 +119,9 @@ public class ProfilActivity extends AppCompatActivity {
         String language = prefs.getString("My_Lang", "");
         setLocale(language);
     }
-
+    public void deconnexion(View view){
+        FirebaseAuth.getInstance().signOut(); // Déconnexion de l'utilisateur
+        startActivity(new Intent(getApplicationContext(), Login.class));
+        finish();
+    }
 }

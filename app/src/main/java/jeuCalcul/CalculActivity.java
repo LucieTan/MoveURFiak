@@ -2,7 +2,6 @@ package jeuCalcul;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.example.moveurfiak.R;
+import com.example.moveurfiak.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import memory.Memory;
 import reveil.AlarmService;
 
 public class CalculActivity extends AppCompatActivity {
@@ -22,6 +24,9 @@ public class CalculActivity extends AppCompatActivity {
     Button btn_rep0, btn_rep1, btn_rep2, btn_rep3;
     TextView tv_score, tv_questions, tv_timer, tv_bottommessage;
     ProgressBar prog_timer;
+    DatabaseReference reference;
+    FirebaseUser user;
+   // int meilleurScore;
 
     Jeu g = new Jeu();
     int secondsRemaining = 30;
@@ -45,6 +50,12 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
 
+        reference = FirebaseDatabase.getInstance().getReference("Utilisateur");
+       /* user = FirebaseAuth.getInstance().getCurrentUser();
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+           reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("scoreCalcul").get;
+        }
+        meilleurScore = user.*/
 
 
         btn_rep0 = findViewById(R.id.btn_rep0);
@@ -83,6 +94,7 @@ public class CalculActivity extends AppCompatActivity {
         btn_rep3.setOnClickListener(answerButtonClickListener);
     }
 
+    // Fonction fin de jeu, si score inférieur à 70 le jeu recommence en boucle
     private void finDeGame(){
         if( g.getScore() < 70){
             Intent intent = new Intent(getApplicationContext(),CalculActivity.class);
@@ -91,6 +103,7 @@ public class CalculActivity extends AppCompatActivity {
         }else{
             btn_rep0.setEnabled(false);btn_rep1.setEnabled(false);
             btn_rep2.setEnabled(false);btn_rep3.setEnabled(false);
+            // Pop up qui affiche le nombre de points et le nombre de bonne réponse
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(CalculActivity.this);
             alertDialogBuilder
                     .setMessage("Vous avez " +g.getScore() + " pts" + "\net " + g.getNumberCorrect() + " bonnes réponses sur : " + (g.getTotalQuestions()-1))
@@ -102,11 +115,11 @@ public class CalculActivity extends AppCompatActivity {
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
             stopService(new Intent(this, AlarmService.class));
-            //finish();
         }
-
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("scoreCalcul").setValue(g.getScore());
     }
 
+    // Change de calcul à chaque fois que l'on appuie sur une réponse
     private void nextTurn() {
         g.makeNewQuestion();
         int [] answer = g.getCurrentQuestion().getAnswerArray();
@@ -124,4 +137,5 @@ public class CalculActivity extends AppCompatActivity {
         tv_questions.setText(g.getCurrentQuestion().getQuestionPhrase());
         tv_bottommessage.setText(g.getNumberCorrect() + "/" + (g.getTotalQuestions() -1 ));
     }
+
 }

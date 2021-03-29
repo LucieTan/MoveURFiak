@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.moveurfiak.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Random;
 
@@ -25,11 +28,13 @@ public class MeteoClickerActivity extends AppCompatActivity {
     ImageView[] IMGS = {tornado, hotsun, smilingsun, thunderstorm, smilingmoon, twoclouds};
     int score = 0;
     Chronometer timer;
+    DatabaseReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meteoclicker);
+        ref = FirebaseDatabase.getInstance().getReference("Utilisateur");
 
         timer = (Chronometer) findViewById(R.id.chrono_clicker);
         timer.start();
@@ -67,7 +72,7 @@ public class MeteoClickerActivity extends AppCompatActivity {
 
     private int random() {
         Random r = new Random();
-        int i = r.nextInt(5 - 0) + 0;
+        int i = r.nextInt(5 - 0);
         return i;
     }
 
@@ -97,8 +102,7 @@ public class MeteoClickerActivity extends AppCompatActivity {
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
             stopService(new Intent(this, AlarmService.class));
-
-            //finish();
         }
+        ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("timerClicker").setValue(timer.getText());
     }
 }

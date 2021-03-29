@@ -23,7 +23,7 @@ public class AlarmService extends Service {
         player = MediaPlayer.create(this,
                 Settings.System.DEFAULT_RINGTONE_URI);
 
-        //boucle qui mermet a l'alarme de sonner sans arrêt
+        //boucle qui permet a l'alarme de sonner sans arrêt
         player.setLooping(true);
 
         //lancement de l'alarme sonore
