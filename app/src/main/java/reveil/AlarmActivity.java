@@ -147,7 +147,7 @@ public class AlarmActivity extends Activity {
     //retourne un entier aléatoire parmi 0, 1 et 2
     private int random() {
         Random r = new Random();
-        int i = r.nextInt(2);
+        int i = r.nextInt(3);
         return i;
     }
 

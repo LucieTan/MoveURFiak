@@ -26,7 +26,7 @@ public class CalculActivity extends AppCompatActivity {
     ProgressBar prog_timer;
     DatabaseReference reference;
     FirebaseUser user;
-    int meilleurScore;
+   // int meilleurScore;
 
     Jeu g = new Jeu();
     int secondsRemaining = 30;

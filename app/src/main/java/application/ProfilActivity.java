@@ -38,15 +38,6 @@ public class ProfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         loadLocale(); // language
         setContentView(R.layout.activity_profil);
-        Button nique = findViewById(R.id.btnnique);
-
-        nique.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ParametreActivity.class));
-                finish();
-            }
-        });
 
         //Language
         ActionBar actionBar = getSupportActionBar();
